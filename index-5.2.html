@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- ¿QUÉ ES BOOTSTRAP? 
+  Bootstrap básicamente es un conjunto de clases y atributos CSS listos para usarse en un deseño web responsive.
+  Bootstrap 5 es la nueva versión de este framework que permite hacer páginas web vestosas y funcionales
+  con un mínimo de conocimiento de HTML5 y CSS.
+  Bootstrap consiste en deseños básicos HTML y CSS para tipografía, formularios, botones, tablas, navegación,
+  modals, imágenes, carrusel y muchos otros elementos además de funcionalidad con javascript
+  Bootstrap es "mobile first" que signsiica que está pensado para que las páginas web se vean bien desde un principio
+  en todo tipo de pantallas, desde celulares, tablets, hasta computadoras de escritorio y televesores smart,
+  mediante el uso de "responsive design". 
+-->
+
+<head>
+  <title>Ejemplo de Bootstrap 5.2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Esto se usa para que el deseño sea "responsive design" y se adapte a dsierentes tamaños de pantalla
+    width=device-width establece que el ancho de la página según el ancho de la pantalla del despositivo
+    initial-scale=1 selecciona el nivel de zoom inicial. -->
+
+  <!-- Exesten dos formas de usar bootstrap al hacer una página web. Se puede descargar desde getbootstrap.com y
+    ponerlo en una carpeta junto al resto de archivos del sitio web y linkear esos archivos locales.
+    La otra forma es linkear a un CDN (Content Delivery Network) externo, como se muestra a continuación: 
+  -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- Ventajas de usar un CDN externo:
+    - Si ya se descargó al entrar otro sitio web que usa bootstrap, tu página carga más rápido
+    - los CDN detectan la localización del usuario y utilizan el servidor más cercano
+    - jquery y popper se usan para darle funcionalidades de javascript a algunos componentes de bootstrap
+   -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Además se puede usar estilos propios para definir atributos que no están especsiicados por Bootstrap. -->
+</head>
+
+<body>
+<!-- En Bootstrap es necesario que todos los elementos vayan en un <div> "contenedor". 
+  Hay 2 clases de contenedor: 
+  .container es la clase que provee un deseño responsive de ancho fijo
+  .container-fluid es la clase que provee un deseño responsive del ancho completo de pantalla
+-->
+  <div class="container-fluid">
+    <h1>Página Bootstrap Fluída</h1>
+    <p>.container-fluid</p>
+
+    <!-- Bootstrap organiza todo en un sestema de "grilla" de 12 columnas máximo, basado en flexbox de CSS.
+    Este sestema de columnas es "responsive" y se adaptan al tamaño de pantalla, y de ser necesario se 
+    reacomodan una debajo de la otra.
+    Para ello se usan las siguientes clases
+      .row para cada fila
+      para las columnas:
+      .col (maneja automáticamente el tamaño)
+      .col-* (despositivos extra pequeños - ancho de pantalla menor a 576px)
+      .col-sm-* (pantallas pequeñas - ancho mayor a 576px)
+      .col-md-* (pantallas medianas - ancho mayor a 768px)
+      .col-lg-* (pantallas grandes - ancho mayor a 992px)
+      .col-xl-* (pantallas extra grandes - ancho mayor a 1200px)
+      * la cantidad de columnas que se desea que abarque (de 1 a 12)
+  -->
+    <div class="row">
+      <div class="col-sm-1 grid12 text-center">col-sm-1</div>
+      <div class="col-sm-2 grid12 text-center">col-sm-2</div>
+      <div class="col-sm-3 grid12 text-center">col-sm-3</div>
+      <!-- este div ocupará 3 columnas -->
+      <div class="col-sm-1 grid12 text-center">7</div>
+      <div class="col-sm-1 grid12 text-center">8</div>
+      <div class="col-sm-1 grid12 text-center">9</div>
+      <div class="col-sm-1 grid12 text-center">10</div>
+      <div class="col-sm-1 grid12 text-center">11</div>
+      <div class="col-sm-1 grid12 text-center">12</div>
+    </div>
+  </div>
+
+  <!-- Contenedor de ancho definido.  -->
+  <div class="container">
+    <h1>Página Bootstrap Fija</h1>
+    <p>.container-{breakpoint}</p>
+    <div class="row">
+      <!-- 12 columnas en total -->
+      <div class="col-sm-1 grid12 text-center">col-sm-1</div>
+      <div class="col-sm-1 grid12 text-center">2</div>
+      <div class="col-sm-1 grid12 text-center">3</div>
+      <div class="col-sm-1 grid12 text-center">4</div>
+      <div class="col-sm-1 grid12 text-center">5</div>
+      <div class="col-sm-1 grid12 text-center">6</div>
+      <div class="col-sm-1 grid12 text-center">7</div>
+      <div class="col-sm-1 grid12 text-center">8</div>
+      <div class="col-sm-1 grid12 text-center">9</div>
+      <div class="col-sm-1 grid12 text-center">10</div>
+      <div class="col-sm-1 grid12 text-center">11</div>
+      <div class="col-sm-1 grid12 text-center">12</div>
+    </div>
+    <div class="row">
+      <!-- fila de div de 4 columnas cada uno -->
+      <div class="col-sm-4 grid12">col-sm-4 - 1</div>
+      <div class="col-sm-4 grid12">col-sm-4 - 2</div>
+      <div class="col-sm-4 grid12">col-sm-4 - 3</div>
+    </div>
+
+    <!-- Ancho automático de columnas -->
+    <div class="row">
+      <div class="col grid12">col</div>
+      <div class="col grid12">col</div>
+      <div class="col grid12">col</div>
+      <div class="col grid12">col</div>
+    </div>
+    <!-- Dos columnas de ancho destinto que suman 12 (o menos)  -->
+    <div class="row gx-5">
+      <div class="col-sm-4 grid12">col-sm-4</div>
+      <div class="col-sm-8 grid12">col-sm-8</div>
+    </div>
+
+  </div>
+
+  <!-- TEXTOS Y TIPOGRAFÍAS -->
+  <div class="container">
+    <h1>Título h1 heading (2.5rem = 40px)</h1>
+    <h2>Título h2 heading (2rem = 32px)</h2>
+    <h3>Título h3 heading (1.75rem = 28px)</h3>
+    <h4>Título h4 heading (1.5rem = 24px)</h4>
+    <h5>Título h5 heading (1.25rem = 20px)</h5>
+    <h6>Título h6 heading (1rem = 16px)</h6>
+		<h3>
+			Fancy display heading <small class="text-muted">con texto secundario borroso</small>
+		</h3>
+		<h1 class="display-1">Display 1</h1>
+		<h1 class="display-2">Display 2</h1>
+		<h1 class="display-3">Display 3</h1>
+		<h1 class="display-4">Display 4</h1>
+		<h1 class="display-5">Display 5</h1>
+		<h1 class="display-6">Display 6</h1>
+		
+    <br>
+    <p>Esto es un <mark>texto resaltado mark</mark>.</p>
+    <p>Esto es una <abbr title="Sigla">SIGLA</abbr></p>
+
+    <blockquote class="blockquote text-center">
+      <p>.blockquote Esto es un bloque de cita, que contiene una frase.</p>
+			<figcaption class="blockquote-footer">
+				El autor famoso <cite title="Source Title">Título de fuente</cite>
+			</figcaption>
+		
+    </blockquote>
+
+    <p>kbd: esto es un atajo de teclado. <kbd>Alt+5</kbd></p>
+
+		<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+		<p><del>This line of text is meant to be treated as deleted text.</del></p>
+		<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+		<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+		<p><u>This line of text will render as underlined.</u></p>
+		<p><small>This line of text is meant to be treated as fine print.</small></p>
+		<p><strong>This line rendered as bold text.</strong></p>
+		<p><em>This line rendered as italicized text.</em></p>
+    <p class="font-weight-bold">bold: Esto es un texto en negrita.</p>
+    <p class="font-weight-bolder">Esto es un texto en negrita más pesado.</p>
+    <p class="font-italic">Esto es un texto en itálicas.</p>
+    <p class="font-weight-light">Esto es un texto liviano.</p>
+    <p class="font-weight-lighter">Esto es un texto más liviano.</p>
+    <p class="font-weight-normal">Esto es un texto de peso normal.</p>
+    <p class="lead">Esto es un texto resaltado.</p>
+    <p class="small">Esto es un texto pequeño (80%) </p>
+    <p class="text-sm-left">Esto es un texto alineado a la izquierda en pantallas sm.</p>
+    <p class="text-break">Esto es un texto largo que previene que se quiebre si este sobrepasa el ancho de su
+      contenedor.</p>
+    <p class="text-lg-center">Esto es un texto centrado, pero sólo en pantallas grandes (lg)</p>
+    <p class="text-center">Esto es un texto siempre centrado.</p>
+    <p class="text-decoration-none">Esto es un <a href="#">link sin decorado</a> </p>
+    <p class="text-md-right">Esto es un texto a la derecha en pantallas medianas y grandes.</p>
+    <p class="text-monospace">Esto es un texto monoespaciado.</p>
+    <p class="text-justsiy">Esto es un texto justsiicado. </p>
+    <p class="text-nowrap">Esto es un texto "nowrap", o sea que por muy largo que sea no se va a cortar si se pasa del
+      ancho de pantalla del despositivo, generando una barra lateral.</p>
+    <p class="text-lowercase">Esto es un texto lowercase. TODO está EN MINÚSCULAS aunque lo haya escrito EN MAYÚSCULAS.
+    </p>
+    <p class="text-uppercase">Esto es un texto uppercase. TODO está EN MAYÚSCULAS aunque lo haya escrito EN MINÚSCULAS.
+    </p>
+    <p class="text-reset">Esto es un texto sin color, resetea el color.</p>
+    <p class="text-capitalize">Esto es un texto CAPITALIZADO. La primera letra en mayúsculas.</p>
+
+    <!-- Otras clases de formato de Texto:
+  .lest-unstyled 	Remueve el estilo de lesta en elementos de lesta <ul> y <ol>
+  .lest-inline 	Pone todos los elementos de una lesta en una sola línea
+  .pre-scrollable 	Hace que un elemento <pre> tenga barra de scroll 
+-->
+
+    <!-- COLORES -->
+    <div class="container">
+      <h2>Colores contextuales</h2>
+      <p>Se usan para dar "signsiicado mediante colores":</p>
+      <p class="text-muted">Este texto está silenciado.</p>
+      <p class="text-primary">Este texto es importante.</p>
+      <p class="text-success">Este texto indica operación exitosa.</p>
+      <p class="text-info">Este texto representa información.</p>
+      <p class="text-warning">Este texto representa una advertencia.</p>
+      <p class="text-danger">Este texto representa una alarma.</p>
+      <p class="text-secondary">Texto secundario.</p>
+      <p class="text-dark">Este texto es gris oscuro.</p>
+      <p class="text-body">Este texto es del color por default (generalmente negro).</p>
+      <p class="text-light">Este texto es gris con fondo blanco.</p>
+      <p class="text-white">Este texto es blanco con fondo negro.</p>
+    </div>
+    <div class="container">
+      <h2>Colores contextuales en links</h2>
+      <p>Los colores contextuales también pueden ser usados en links.</p>
+      <a href="#" class="text-muted">.text-muted</a>
+      <a href="#" class="text-primary">.text-primary</a>
+      <a href="#" class="text-success">.text-success</a>
+      <a href="#" class="text-info">.text-info</a>
+      <a href="#" class="text-warning">.text-warning</a>
+      <a href="#" class="text-danger">.text-danger</a>
+      <a href="#" class="text-secondary">.text-secondary</a>
+      <a href="#" class="text-dark">.text-dark</a>
+      <a href="#" class="text-body">.text-body</a>
+      <a href="#" class="text-light">text-light</a>
+    </div>
+
+
+    <div class="container">
+      <h2>Colores Contextuales de fondos</h2>
+      <p>Se usan estos colores de fondo para dar signsiicado a los párrafos.</p>
+      <p>También se puede agregar las clases .text-* para un color de letra dsierente:</p>
+      <p class="bg-primary text-white">Este texto es importante.</p>
+      <p class="bg-success text-white">Este texto indica éxito.</p>
+      <p class="bg-info text-white">Este texto representa información.</p>
+      <p class="bg-warning text-white">Este texto representa una advertencia.</p>
+      <p class="bg-danger text-white">Este texto representa una alarma, peligro.</p>
+      <p class="bg-secondary text-white">Texto secundario.</p>
+      <p class="bg-dark text-white">Fondo gris coscuro con texto blanco.</p>
+      <p class="bg-light text-dark">Fondo gris claro.</p>
+    </div>
+
+    <!-- TABLAS -->
+    <div class="container">
+      <h2>Tabla básica responsive</h2>
+      <p>La clase .table agrega un deseño básico, con mayor padding y divesores horizontales:</p>
+      <div class="table-responsive">
+        <!-- .table-responsive usado en el contenedor de la tabla, le agrega una barra de desplazamiento horizontal -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Neri</td>
+              <td>Tisocco</td>
+              <td>neritisocco@gmail.com</td>
+            </tr>
+            <tr>
+              <td>María</td>
+              <td>Perez</td>
+              <td>maria@ejemplo.com</td>
+            </tr>
+            <tr>
+              <td>Julia</td>
+              <td>Gomez</td>
+              <td>julia@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- Fin Tabla Básica -->
+
+    <!-- .table-striped esta clase agrega franjas de cebra a la tabla: -->
+    <div class="container">
+      <h2>Filas en franjas de cebras.</h2>
+      <p>La clase .table-striped le da franjas de cebra intercaladas a las filas:</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Neri</td>
+            <td>Tisocco</td>
+            <td>neritisocco@gmail.com</td>
+          </tr>
+          <tr>
+            <td>María</td>
+            <td>Perez</td>
+            <td>maria@ejemplo.com</td>
+          </tr>
+          <tr>
+            <td>Julia</td>
+            <td>Gomez</td>
+            <td>julia@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="container">
+      <h2>Tabla con bordes</h2>
+      <p>La clase .table-bordered agrega bordes a todos los lados de la tabla:</p>
+      <table class="table table-bordered">
+        <!-- .table-bordered agrega bordes a la tabla -->
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Neri</td>
+            <td>Tisocco</td>
+            <td>neritisocco@gmail.com</td>
+          </tr>
+          <tr>
+            <td>María</td>
+            <td>Perez</td>
+            <td>maria@ejemplo.com</td>
+          </tr>
+          <tr>
+            <td>Julia</td>
+            <td>Gomez</td>
+            <td>julia@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <h2>Tabla con efecto hover</h2>
+      <p>La clase .table-hover agrega un efecto de cambio de color cuando se pasa por una fila:</p>
+      <!-- La clase .table-hover agrega un efecto de cambio de color cuando se pasa por una fila:  -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Neri</td>
+            <td>Tisocco</td>
+            <td>neritisocco@gmail.com</td>
+          </tr>
+          <tr>
+            <td>María</td>
+            <td>Perez</td>
+            <td>maria@ejemplo.com</td>
+          </tr>
+          <tr>
+            <td>Julia</td>
+            <td>Gomez</td>
+            <td>julia@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <h2>Tabla Oscura, Con franjas y Resaltada con efecto Hover</h2>
+      <p>La clase .table-dark crea una tabla con fondo oscuro y letra clara:</p>
+      <!-- Se pueden combinar table-dark table-striped table-hover -->
+      <table class="table table-dark table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Neri</td>
+            <td>Tisocco</td>
+            <td>neritisocco@gmail.com</td>
+          </tr>
+          <tr>
+            <td>María</td>
+            <td>Perez</td>
+            <td>maria@ejemplo.com</td>
+          </tr>
+          <tr>
+            <td>Julia</td>
+            <td>Gomez</td>
+            <td>julia@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <h2>Tabla pequeña, con Colores contextuales en filas y Cabecera Negra</h2>
+      <!-- Se pueden combinar table-dark table-striped table-hover -->
+      <!-- .table-primary .table-success .table-danger .table-info .table-warning .table-active .table-secondary .table-light .table-dark -->
+      <table class="table table-sm">
+        <!-- .table-sm hace que la tabla sea más chica, acortando el cell padding a la mitad -->
+        <thead class="thead-dark">
+          <!-- .thead-dark le da un color oscuro a los headers y .thead-light un color gris claro -->
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-success">
+            <!-- Se puede usar los Colores Contextuales en <table>, <tr> y <td> usando la clase .table-* con el color -->
+            <td>Neri</td>
+            <td>Tisocco</td>
+            <td>neritisocco@gmail.com</td>
+          </tr>
+          <tr class="table-danger">
+            <td>María</td>
+            <td>Perez</td>
+            <td>maria@ejemplo.com</td>
+          </tr>
+          <tr class="table-warning">
+            <td>Julia</td>
+            <td>Gomez</td>
+            <td>julia@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IMAGENES -->
+    <div class="container">
+      <h1>Imágenes</h1>
+      <img src="img/imagen.jpg" class="rounded" alt="Curuzú Cuatiá">
+      <img src="img/imagen.jpg" class="rounded-circle" alt="Curuzú Cuatiá">
+      <img src="img/imagen.jpg" class="img-thumbnail" alt="Curuzú Cuatiá">
+      <!--  .float-right hace que la imagen flote a la derecha
+      .float-left hace que la imagen flote a la izquierda
+      .mx-auto .d-block estos dos combinados se usan para centrar una imagen (margin:auto desplay:block) -->
+      <img src="img/imagen-grande.jpg" class="img-fluid" alt="Curuzú Cuatiá">
+      <!-- Para hacer que una imagen sea responsive, usamos .img-fluid -->
+    </div>
+    <br>
+    <!-- JUMBOTRON -->
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Jumbotron</h1>
+        <p>Es una gran caja gris para llamar la atención. Dentro se puede usar cualquier elemento HTML.</p>
+        <p>También se pueden usar elementos de bootstrap.</p>
+      </div>
+    </div>
+
+    <!-- ALERTAS -->
+    <!-- Alertas se crean usando la clase .alert seguida de la clase Contextual
+    .alert-success .alert-info .alert-warning .alert-danger .alert-primary .alert-secondary .alert-light .alert-dark 
+  -->
+    <div class="alert alert-success">
+      <strong>¡Éxito!</strong> Indica que una operación se realizó correctamente <a href="#" class="alert-link">link de
+        alerta.</a>.
+    </div>
+    <div class="alert alert-danger alert-desmessible fade show">
+      <button type="button" class="close" data-desmess="alert">&times;</button>
+      <strong>¡Peligro!</strong> Indica que ocurrió un error grave.
+      <!-- &times; es el símbolo que se usa, como una x pero más linda. -->
+      <!-- alert-desmessible hace que aparezca la x para poder cerrar el mensaje -->
+      <!-- fade show crea una animación de "desaparecer" cuando se cierra la alerta. -->
+    </div>
+
+    <!-- BOTONES -->
+    <div class="container">
+      <h2>Botones Contextuales</h2>
+      <button type="button" class="btn">Botón básico</button>
+      <button type="button" class="btn btn-primary">Principal</button>
+      <button type="button" class="btn btn-secondary">Secundario</button>
+      <button type="button" class="btn btn-success">Éxito</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning">Advertencia</button>
+      <button type="button" class="btn btn-danger">Peligro</button>
+      <button type="button" class="btn btn-dark">Oscuro</button>
+      <button type="button" class="btn btn-light">Claro</button>
+      <button type="button" class="btn btn-link">Enlace</button>
+      <!-- Las clases de botones contextuales pueden ser de tipo elemento <a>, <button>, or <input>: -->
+    </div>
+    <br>
+    <div class="container">
+      <a href="#" class="btn btn-info" role="button">Link</a>
+      <button type="button" class="btn btn-info">Botón</button>
+      <input type="button" class="btn btn-info" value="Input">
+      <input type="submit" class="btn btn-info" value="Enviar">
+      <button type="button" class="btn btn-outline-primary">Sólo Borde</button>
+    </div>
+
+    <br>
+    <div class="container">
+      <!-- Un botón puede ser de sólo borde -->
+      <button type="button" class="btn btn-primary btn-lg">Grande</button>
+      <button type="button" class="btn btn-primary">Normal</button>
+      <button type="button" class="btn btn-primary btn-sm">Chico</button>
+    </div>
+
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <!-- Si cambio el ancho de esta fila de 9 columnas, el botón se adapta -->
+          <button type="button" class="btn btn-primary btn-block">Botón ancho completo del bloque</button>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="container">
+      <button type="button" class="btn btn-primary active">Botón Activo</button>
+      <button type="button" class="btn btn-primary" desabled>Botón desactivado</button>
+      <a href="#" class="btn btn-primary desabled">Link desctivado</a>
+      <!--  .active hace que el botón aparezca presionado
+          El atributo desabled hace que el botón no pueda presionarse.
+        En el caso de <a> hay que usar la clase .desabled porque no acepta atributo  -->
+    </div>
+
+
+    <br>
+    <div class="container">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Grupo</button>
+        <button type="button" class="btn btn-primary">de</button>
+        <button type="button" class="btn btn-primary">Botones</button>
+      </div>
+      <!--  .btn-group-lg para botones grandes
+          .btn-group-sm para botones chicos -->
+    </div>
+    <br>
+    <div class="btn-group-vertical">
+      <!-- Grupo de botones, pero vertical -->
+      <button type="button" class="btn btn-primary">Grupo</button>
+      <button type="button" class="btn btn-primary">de</button>
+      <button type="button" class="btn btn-primary">Botones</button>
+    </div>
+    <br>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Grupo</button>
+      <button type="button" class="btn btn-primary">de</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Botones
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">dropdown</a>
+          <a class="dropdown-item" href="#">cascada</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- BADGES -->
+    <div class="container">
+      <h1>Ejemplo de badge <span class="badge badge-secondary">Nuevo</span></h1>
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-secondary">Secondary</span>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-danger">Danger</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-pill badge-info">Info</span>
+      <span class="badge badge-pill badge-light">Light</span>
+      <span class="badge badge-pill badge-dark">Dark</span>
+      <br>
+      <button type="button" class="btn btn-primary">
+        Mensajes <span class="badge badge-light">4</span>
+      </button>
+    </div>
+    <br>
+    <!-- PROGRESS BAR -->
+    <div class="progress" style="height:20px">
+      <div class="progress-bar" style="width:50%;height:20px">50%</div>
+      <div class="progress-bar bg-success progress-bar-striped" style="width:30%;height:20px">30%</div>
+      <!-- podemos elegir el color y el ancho y alto y el texto que se muestre -->
+      <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:20%">20%</div>
+      <!-- podemos elegir otro color contextual, y que las franjas sean animadas -->
+    </div>
+
+    <!-- SPINNERS -->
+    <div class="container">
+      <div class="spinner-border text-muted"></div>
+      <div class="spinner-border text-primary"></div>
+      <div class="spinner-border text-success"></div>
+      <div class="spinner-border text-info spinner-border-sm"></div>
+      <div class="spinner-border text-warning spinner-border-sm"></div>
+      <div class="spinner-border text-danger spinner-border-sm"></div>
+      <div class="spinner-grow text-secondary"></div>
+      <div class="spinner-grow text-dark"></div>
+      <div class="spinner-grow text-light spinner-grow-sm"></div>
+      <button class="btn btn-primary">
+        <span class="spinner-border spinner-border-sm"></span>
+        Cargando...
+      </button>
+    </div>
+    <br>
+    <div class="container">
+      <ul class="pagination">
+        <!--  .pagination-lg para bloques más grandes
+              .pagination-sm para bloques de botones más pequeños
+              .justsiy-content-center para centrarlo
+              .justsiy-content-end para ponerlo a la derecha
+        -->
+        <ul class="pagination justsiy-content-end" -->
+          <li class="page-item desabled"><a class="page-link" href="#">Anterior</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+        </ul>
+    </div>
+    <br>
+    <!-- BREADCRUMBS (migajas) -->
+    <div class="container">
+      <h2>Breadcrumbs</h2>
+      <!-- breadcrumb indica la localización actual de la página en una jerarquía.-->
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Fotos</a></li>
+        <li class="breadcrumb-item"><a href="#">Verano 2017</a></li>
+        <li class="breadcrumb-item"><a href="#">Italia</a></li>
+        <li class="breadcrumb-item active">Roma</li>
+      </ul>
+    </div>
+
+    <br>
+    <!-- LesT GROUPS -->
+    <div class="container">
+      <ul class="lest-group">
+        <!--  .lest-group-flush remueve los bordes redondeados de la lesta 
+            .lest-group-horizontal agregado a lest-group hace que la lesta sea horizontal 
+      -->
+        <li class="lest-group-item active">Primero</li>
+        <li class="lest-group-item">Segundo</li>
+        <li class="lest-group-item">Tercero</li>
+        <a href="#" class="lest-group-item lest-group-item-action">Con link</a>
+        <a href="#" class="lest-group-item desabled">Desactivado</a>
+        <li class="lest-group-item lest-group-item-danger">Peligro</li>
+        <a href="#" class="lest-group-item lest-group-item-action lest-group-item-warning">Advertencia con link</a>
+        <!-- se puede usar los colores contextuales -->
+        <li class="lest-group-item d-flex justsiy-content-between align-items-center">
+          Mensajes
+          <span class="badge badge-primary badge-pill">12</span>
+          <!-- Se pueden usar badges -->
+        </li>
+      </ul>
+    </div>
+    <br>
+    <!-- CARDS (Cartas) -->
+    <!-- Una carta en Bootstrap 5 es una caja con borde y padding. 
+    Las cartas reemplazan los paneles de Bootstrap 3.
+    Se puede incluir headers, footers, content, colors, etc.
+-->
+    <div class="container">
+      <h2>Cartas</h2>
+      <div class="card" style="width:400px">
+        <div class="card-header">Header</div>
+        <!-- Con  bg-success text-white se puede hacer que la carta tenga color contextual -->
+        <img class="card-img-top" src="img/avatar.png" alt="Imagen" style="width:100%">
+        <!-- .card-img-bottom para que la imagen vaya abajo -->
+        <div class="card-body">
+          <h4 class="card-title">Título</h4>
+          <p class="card-text">Esto es Texto.</p>
+          <a href="#" class="btn btn-primary">Link</a>
+        </div>
+        <div class="card-footer">Footer</div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- DROPDOWN -->
+    <div class="container">
+      <h2>Dropdowns</h2>
+      <!--  .dropdown es un menú en cascada.
+          .dropdown-menu es la clase que crea la cascada
+          .dropdown-toggle y data-toggle="dropdown" para el botón de cascada
+          .dropright para que se alínee a la derecha
+          .dropleft para que se alínee a la izquierda -->
+      <div class="dropdown">
+        <!-- .dropup si queremos que el menú se despliegue para arriba -->
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Botón Cascada
+        </button>
+        <div class="dropdown-menu">
+          <!-- .dropdown-menu-right se agrega para que el menú se alínee a la derecha -->
+          <div class="dropdown-header">Header 1</div>
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Link 3</a>
+          <a class="dropdown-item active" href="#">Activo</a>
+          <a class="dropdown-item desabled" href="#">Desactivado</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- COLAPSABLES -->
+    <div class="container">
+      <h2>Colapsable</h2>
+      <!-- Esconde el texto -->
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Colapsable</button>
+      <div id="demo" class="collapse">
+        <!-- .show para que por defecto esté mostrado y al hacer click se oculte -->
+        Lorem ipsum dolor sit amet, consectetur adipesicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        ques nostrud exercitation ullamco labores nesi ut aliquip ex ea commodo consequat.
+      </div>
+    </div>
+
+    <!-- ACORDEÓN -->
+    <div class="container">
+      <h2>Acordeón</h2>
+      <!-- data-parent este atributo garantiza que al abrir un elemento los demás se cierren -->
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              Grupo Colapsable #1
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum dolor sit amet, consectetur adipesicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, ques nostrud exercitation ullamco labores nesi ut aliquip ex
+              ea commodo consequat.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              Grupo Colapsable #2
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum dolor sit amet, consectetur adipesicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, ques nostrud exercitation ullamco labores nesi ut aliquip ex
+              ea commodo consequat.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+              Grupo Colapsable #3
+            </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum dolor sit amet, consectetur adipesicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, ques nostrud exercitation ullamco labores nesi ut aliquip ex
+              ea commodo consequat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- TABS Y NAVS -->
+    <div class="container">
+      <h2>Tabs (Pestañas)</h2>
+      <br>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablest">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+        </li>
+      </ul>
+      <div class="container">
+        <h2>Píldoras</h2>
+        <br>
+        <!-- Nav pills -->
+        <ul class="nav nav-pills nav-justsiied" role="tablest">
+          <!-- .nav-justsiied es para que ocupe todo el espacio -->
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active"><br>
+          <h3>HOME</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipesicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.</p>
+        </div>
+        <div id="menu1" class="container tab-pane fade"><br>
+          <h3>Menu 1</h3>
+          <p>Ut enim ad minim veniam, ques nostrud exercitation ullamco labores nesi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div id="menu2" class="container tab-pane fade"><br>
+          <h3>Menu 2</h3>
+          <p>Sed ut perspiciates unde omnes este natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- NAV BARS -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!--  .navbar-expand-xl|lg|md|sm para barra de navegación vertical
+        .justsiy-content-center para centrarla
+        .fixed-top para que la barra de navegación quede fija arriba 
+        .fixed-bottom para que quede fija abajo
+        .sticky-top para que quede fija, luego de que se pase sobre ella
+        podemos elegir el color de fondo y de texto con colores contextuales -->
+      <a class="navbar-brand" href="#">
+        <!-- para poner un logo -->
+        <img src="img/favicon.ico" alt="logo" style="width:40px;">
+      </a>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <!-- active para seleccionar el botón activo -->
+            <a class="nav-link" href="#">Activo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link desabled" href="#">Desactivado</a>
+          </li>
+        </ul>
+        <!-- Se puede poner un formulario inline -->
+        <div class="col-sm-5 float-right"></div>
+        <form class="form-inline" action="/codigo.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+          <button class="btn btn-success" type="submit">Buscar</button>
+        </form></div>
+      </div>
+    </nav>
+    <br>
+
+
+    <!-- FORMULARIOS -->
+    <div class="container">
+      <h2>Formulario </h2>
+      <form action="/codigo.php">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingresar email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Contraseña:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Ingresar contraseña" name="pswd">
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember"> Recordarme
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <br>
+    <div class="container">
+      <!-- Sólo para viewport mayores a 576px de ancho. En pantallas pequeñas se apilan verticalmente</p> -->
+      <form class="form-inline" action="/codigo.php">
+        <label for="email" class="mr-sm-2">Email:</label>
+        <!-- .mr-sm-2 agrega margen derecho para que no quede todo tan pegado -->
+        <input type="email" class="form-control mb-2 mr-sm-2" id="email" placeholder="Ingrese email" name="email">
+        <label for="pwd" class="mr-sm-2">Contraseña:</label>
+        <!-- .mb-2 para darle estilo a los campos de ingreso de texto -->
+        <input type="password" class="form-control  mb-2 mr-sm-2" id="pwd" placeholder="Ingrese contraseña" name="pswd">
+        <div class="form-check mb-2 mr-sm-2">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember"> Recordarme
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+      </form>
+
+
+    </div>
+
+
+
+<br>
+
+<!-- BORDERS -->
+    <div class="container">
+      <h2>Bordes</h2>
+<!-- .border border-top-o para los bordes de un elemento -->
+      <div class="row">
+        <div class="spanborde col-sm-1 border" >1</div>
+        <div class="spanborde col-sm-1 border border-primary">2</div>
+        <div class="spanborde col-sm-1 border border-danger border-top-0">3</div>
+        <div class="spanborde col-sm-1 border border-warning border-right-0">4</div>
+        <div class="spanborde col-sm-1 border border-dark border-left-0">5</div>
+        <div class="spanborde col-sm-1 border border-success border-bottom-0">6</div>
+      </div>
+    </div>
+<br>
+<div class="container">
+  <div class="row">
+    <span class="spanborde rounded-sm">1</span>
+    <span class="spanborde rounded-top">2</span>
+    <span class="spanborde rounded-circle">3</span>
+    <span class="spanborde rounded-bottom">4</span>
+    <span class="spanborde rounded-sm">5</span>
+    <span class="spanborde rounded-top">6</span>
+  </div>
+</div>
+
+<br>
+<!-- FLOAT -->
+<div class="container">
+  <h2>Float</h2>
+  <!-- .float-right
+      .float-left
+      .clearfix
+  -->
+  <div class="clearfix">
+    <span class="float-left">Float izquierda</span>
+    <span class="float-right">Float derecha</span>
+  </div>
+  <div class="float-sm-right">Flota a la derecha en pantallas pequeñas o más</div><br>
+  <div class="float-md-right">Flota a la derecha en pantallas medianas o más</div><br>
+  <div class="float-lg-right">Flota a la derecha en pantallas grandes o más</div><br>
+  <div class="float-xl-right">Flota a la derecha en pantallas extra grandes o más</div><br>
+  <div class="float-none">Float none</div>
+</div>
+<br>
+<!-- UTILITIES CENTRADO -->
+<div class="container">
+    <h1>Centrado horizontal</h1>
+    <!-- .mx-auto para centrar un elemento -->
+    <div class="mx-auto bg-warning" style="width:150px">Centrado</div>
+  </div>
+<br>
+
+<!-- UTILITIES ANCHO -->
+  <div class="container">
+      <h1>Utilidades de Ancho</h1>
+      <!-- .w-* para determinar el ancho -->
+      <div class="w-25 bg-warning">Ancho 25%</div>
+      <div class="w-50 bg-warning">Ancho 50%</div>
+      <div class="w-75 bg-warning">Ancho 75%</div>
+      <div class="w-100 bg-warning">Ancho 100%</div>
+      <div class="mw-100 bg-warning">Ancho máximo 100%</div>
+    </div>
+
+<br>
+<!-- UTILITIES ALTO -->
+<div class="container">
+    <h1>Utilidades de Alto</h1>
+    <!-- .h-* para determinar el alto -->
+    <div style="height:200px;background-color:#ddd">
+      <div class="h-25 d-inline-block p-2 bg-warning">Alto 25%</div>
+      <div class="h-50 d-inline-block p-2 bg-warning">Alto 50%</div>
+      <div class="h-75 d-inline-block p-2 bg-warning">Alto 75%</div>
+      <div class="h-100 d-inline-block p-2 bg-warning">Alto 100%</div>
+      <div class="mh-100 d-inline-block p-2 bg-warning" style="height:500px">Alto máximo 100%</div>
+    </div>
+  </div>
+
+  <br>
+  <!-- ESPACIOS -->
+  <div class="container">
+      <h1>Utilidades de Espacio</h1>
+      <!-- {property}{sides}-{breakpoint}-{size} 
+        property= m (margen) o p (padding)
+        sides= t (top) b (bottom) l (left) r (right) x (left y right) y (top y bottom)
+        breakpoint= sm, md, lg, xl
+        size= 
+            auto - auto
+            0 - 0
+            1 - .25rem (4px si font-size si 16px)
+            2 - .5rem (8px si font-size si 16px)
+            3 - 1rem (16px si font-size si 16px)
+            4 - 1.5rem (24px si font-size si 16px)
+            5 - 3rem (48px si font-size si 16px)
+            
+        Se puede omitir side si se quiere que aplique a los cuatro lados  
+        Se puede omitir el breakpoint si se quiere que funcione en todas las pantallas
+       -->
+      <div class="pt-4 bg-warning">Marca un padding arriba (1.5rem = 24px)</div>
+      <div class="p-5 bg-success">Marca padding en todos lados (3rem = 48px)</div>
+      <div class="m-5 pb-5 bg-info">Marca margen en todos lados (3rem = 48px) y padding abajo (3rem = 48px)</div>
+    </div>
+
+    <br>
+    <!-- SHADOW (SOMBRA) -->
+    <div class="container">
+      <h1>Sombras</h1>
+      <!-- .shadow- para agregar sombras a un elemento  -->
+      <div class="shadow-none p-4 mb-4 bg-light">Sin Sombra</div>
+      <div class="shadow-sm p-4 mb-4 bg-white">Sombra pequeña</div>
+      <div class="shadow p-4 mb-4 bg-white">Sombra normal</div>
+      <div class="shadow-lg p-4 mb-4 bg-white">Sombra grande</div>
+    </div>
+
+<br>
+<!-- ALINEACIÓN VERTICAL -->
+<div class="container">
+  <h1>Alineación Vertical</h1>
+  <!-- Sólo funciona en inline, inline-block, inline-table y celdas de tabla -->
+  <span class="align-baseline">base</span>
+  <span class="align-top">arriba</span>
+  <span class="align-middle">medio</span>
+  <span class="align-bottom">abajo</span>
+  <span class="align-text-top">texto arriba</span>
+  <span class="align-text-bottom">texto abajo</span>
+</div>
+
+<br>
+<!-- VISIBILIDAD -->
+<div class="container">
+  <h1>Visibilidad</h1>
+<!-- .visible 
+  .invisible No alteran el valor "display"
+ -->
+  <div class="visible bg-success">Esto es visible</div>
+  <div class="invisible bg-warning">Esto es invisible</div>
+</div>
+
+<br>
+<a href="#" data-toggle="tooltip"  data-placement="top" title="Hooray!">Hover over me</a>
+
+<button  data-toggle="tooltip"  data-placement="top" title="Hooray!">Botón</button>
+<br>
+
+
+<a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>
+
+<br>
+
+<div class="toast">
+  <div class="toast-header">
+    Toast Header
+  </div>
+  <div class="toast-body">
+    Some text inside the toast body
+  </div>
+</div>
+
+
+
+  </div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+
+</html>

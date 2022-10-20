@@ -1,0 +1,26 @@
+Bootstrap 3, 4 y 5
+
+Bootstrap es la versión más reciente. Bootstrap es un framework para crear páginas web con mínimo conocimiento de HTML y CSS. 
+
+Es mobile-first, lo que quiere decir que las páginas son responsive y su diseño se adapta a cualquier pantalla, desde celular, tablet, monitor de PC y televisores smart.
+
+Hay 2 formas de usar bootstrap en tus desarrollos.
+1. descargar bootstrap desde getbootstrap.com y ponerlo en la carpeta donde esté el sitio web
+2. incluir en las páginas de tu sitio web bootstrap desde CDN
+
+El metatag “viewport” le indica al navegador que el ancho de la página será el ancho del dispositivo/pantalla.
+
+El sistema de rejilla. (Grid System)
+Bootstrap está construido sobre el layout Flexbox de CSS, que permite que cada página se piense como formada por hasta 12 columnas. En una pantalla grande las columnas serán mostradas una al lado de la otra, pero en pantallas pequeñas se irán acomodando automáticamente debajo de la anterior. 
+
+Se basa en 4 clases según el tamaño de pantalla:
+xs Pantalla Pequeña de menos de 768px (teléfonos)
+sm Pantallas Pequeñas de hasta 992px (tablets)
+md Pantallas Medianas mayores a 992px (netbooks, notebooks)
+lg Pantallas Grandes mayores a 1200px (notebooks y monitores)
+
+Para crear una grilla de Bootstrap crea un <div> para cada fila con la clase “row”.
+Dentro crea varios <div> con las clases “col-*-# donde * es la clase de grilla y # es el número de columnas de ancho que ocupará, de máximo 12 columnas permitidas.
+
+Todo esto debe ir dentro de un <div> de clase “container” o “container-fluid” para que ocupe todo el ancho de pantalla (fullscreen)
+
