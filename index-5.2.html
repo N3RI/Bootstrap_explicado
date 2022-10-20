@@ -2,24 +2,24 @@
 <html lang="es">
 <!-- ¿QUÉ ES BOOTSTRAP? 
   Bootstrap básicamente es un conjunto de clases y atributos CSS listos para usarse en un deseño web responsive.
-  Bootstrap 5 es la nueva versión de este framework que permite hacer páginas web vestosas y funcionales
+  Bootstrap 5 es la nueva versión de este framework que permite hacer páginas web vistosas y funcionales
   con un mínimo de conocimiento de HTML5 y CSS.
   Bootstrap consiste en deseños básicos HTML y CSS para tipografía, formularios, botones, tablas, navegación,
-  modals, imágenes, carrusel y muchos otros elementos además de funcionalidad con javascript
-  Bootstrap es "mobile first" que signsiica que está pensado para que las páginas web se vean bien desde un principio
+  modals, imágenes, carrusel y muchos otros elementos además de funcionalidad con javascript.
+  Bootstrap es "mobile first" que signsifica que está pensado para que las páginas web se vean bien desde un principio
   en todo tipo de pantallas, desde celulares, tablets, hasta computadoras de escritorio y televesores smart,
   mediante el uso de "responsive design". 
 -->
 
 <head>
-  <title>Ejemplo de Bootstrap 5.2</title>
+  <title>Ejemplo de Bootstrap 5.2.2</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Esto se usa para que el deseño sea "responsive design" y se adapte a dsierentes tamaños de pantalla
+  <!-- Esto se usa para que el deseño sea "responsive design" y se adapte a diferentes tamaños de pantalla
     width=device-width establece que el ancho de la página según el ancho de la pantalla del despositivo
     initial-scale=1 selecciona el nivel de zoom inicial. -->
 
-  <!-- Exesten dos formas de usar bootstrap al hacer una página web. Se puede descargar desde getbootstrap.com y
+  <!-- Existen dos formas de usar bootstrap al hacer una página web. Se puede descargar desde getbootstrap.com y
     ponerlo en una carpeta junto al resto de archivos del sitio web y linkear esos archivos locales.
     La otra forma es linkear a un CDN (Content Delivery Network) externo, como se muestra a continuación: 
   -->
@@ -30,27 +30,27 @@
     - jquery y popper se usan para darle funcionalidades de javascript a algunos componentes de bootstrap
    -->
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Además se puede usar estilos propios para definir atributos que no están especsiicados por Bootstrap. -->
+  <!-- Además se puede usar estilos propios para definir atributos que no están especificados por Bootstrap. -->
 </head>
 
 <body>
 <!-- En Bootstrap es necesario que todos los elementos vayan en un <div> "contenedor". 
   Hay 2 clases de contenedor: 
   .container es la clase que provee un deseño responsive de ancho fijo
-  .container-fluid es la clase que provee un deseño responsive del ancho completo de pantalla
+  .container-fluid es la clase que provee un deseño responsive del ancho completo 100% de pantalla
 -->
   <div class="container-fluid">
     <h1>Página Bootstrap Fluída</h1>
     <p>.container-fluid</p>
 
-    <!-- Bootstrap organiza todo en un sestema de "grilla" de 12 columnas máximo, basado en flexbox de CSS.
-    Este sestema de columnas es "responsive" y se adaptan al tamaño de pantalla, y de ser necesario se 
+    <!-- Bootstrap organiza todo en un sistema de "grilla" de 12 columnas máximo, basado en flexbox de CSS.
+    Este sistema de columnas es "responsive" y se adaptan al tamaño de pantalla, y de ser necesario se 
     reacomodan una debajo de la otra.
     Para ello se usan las siguientes clases
       .row para cada fila
       para las columnas:
       .col (maneja automáticamente el tamaño)
-      .col-* (despositivos extra pequeños - ancho de pantalla menor a 576px)
+      .col-* (dispositivos extra pequeños - ancho de pantalla menor a 576px)
       .col-sm-* (pantallas pequeñas - ancho mayor a 576px)
       .col-md-* (pantallas medianas - ancho mayor a 768px)
       .col-lg-* (pantallas grandes - ancho mayor a 992px)
@@ -74,7 +74,7 @@
   <!-- Contenedor de ancho definido.  -->
   <div class="container">
     <h1>Página Bootstrap Fija</h1>
-    <p>.container-{breakpoint}</p>
+    <p>.container ó .container-xx</p>
     <div class="row">
       <!-- 12 columnas en total -->
       <div class="col-sm-1 grid12 text-center">col-sm-1</div>
