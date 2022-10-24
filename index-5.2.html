@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- ¿QUÉ ES BOOTSTRAP? 
-  Bootstrap básicamente es un conjunto de clases y atributos CSS listos para usarse en un deseño web responsive.
-  Bootstrap 5 es la nueva versión de este framework que permite hacer páginas web vistosas y funcionales
+<!-- ¿QUÉ ES BOOTSTRAP 5.2.2? 
+  Bootstrap básicamente es un conjunto de clases CSS y atributos listos para usarse en un deseño web responsive.
+  Bootstrap 5 es la nueva versión de este framework CSS que permite hacer páginas web vistosas y funcionales
   con un mínimo de conocimiento de HTML5 y CSS.
   Bootstrap consiste en deseños básicos HTML y CSS para tipografía, formularios, botones, tablas, navegación,
   modals, imágenes, carrusel y muchos otros elementos además de funcionalidad con javascript.
@@ -14,7 +14,7 @@
 <head>
 	<title>Bootstrap Explicado 5.2.2</title>
 	<meta charset="utf-8">
-	<meta name="description" content="Este archivo contiene código HTML5 con clases de Bootstrap5.2.2.">
+	<meta name="description" content="Este archivo contiene código explicado HTML5 con clases CSS de Bootstrap5.2.2.">
 	<meta name="author" content="Neri Tisocco.">
 	<link rel="icon" href="img/bootstrap-favicon-32x32.png" sizes="32x32" type="image/png">
 
@@ -23,14 +23,17 @@
     width=device-width establece que el ancho de la página según el ancho de la pantalla del despositivo
     initial-scale=1 selecciona el nivel de zoom inicial. -->
 
-	<!-- Existen dos formas de usar bootstrap al hacer una página web. Se puede descargar desde getbootstrap.com y
-    ponerlo en una carpeta junto al resto de archivos del sitio web y linkear esos archivos locales.
-    La otra forma es linkear a un CDN (Content Delivery Network) externo, como se muestra a continuación: 
+	<!-- IMPORTANTE: Existen dos formas de usar bootstrap al hacer una página web. Para que Bootstrap funcione, 
+		es importante elegir y utilizar una de ellas. 
+		Se puede descargar un paquete de archivos .css desde getbootstrap.com y ponerlo en una carpeta junto al 
+		resto de archivos del sitio web y linkear esos archivos locales:
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	  La otra forma es linkear a un CDN (Content Delivery Network) externo, como se muestra a continuación: 
   -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<!-- Ventajas de usar un CDN externo:
-    - Si ya se descargó al entrar otro sitio web que usa bootstrap, tu página carga más rápido
+    - Si ya se descargó al entrar otro sitio web que usa Bootstrap, tu página carga más rápido
     - los CDN detectan la localización del usuario y utilizan el servidor más cercano
     - jquery y popper se usan para darle funcionalidades de javascript a algunos componentes de bootstrap
    -->
@@ -41,12 +44,15 @@
 <body>
 	<!-- En Bootstrap es necesario que todos los elementos vayan en un <div> "contenedor". 
   Hay 2 clases de contenedor: 
-  .container es la clase que provee un deseño responsive de ancho fijo
-  .container-fluid es la clase que provee un deseño responsive del ancho completo 100% de pantalla
+  .container 					es la clase que provee un deseño responsive de ancho fijo
+  .container-fluid 		es la clase que provee un deseño responsive del ancho completo 100% de pantalla
 -->
-	<div class="container-fluid">
+	<div class="container-fluid mb-3">
+			<!-- Aclaración: .grid12 y .grid22 son clases que creamos sólo para este documento, le da borde 
+				y color de fondo a algunos elementos.  -->
+			<!-- .mb-3 es una clase css para darle margen inferior a los contenedores de este documento  -->
 		<h1>Página Bootstrap Fluída</h1>
-		<p>.container-fluid</p>
+		<p>.container-fluid (ancho 100%)</p>
 
 		<!-- Bootstrap organiza todo en un sistema de "grilla" de 12 columnas máximo, basado en flexbox de CSS.
     Este sistema de columnas es "responsive" y se adaptan al tamaño de pantalla, y de ser necesario se 
@@ -60,7 +66,7 @@
       .col-md-* (pantallas medianas - ancho mayor a 768px)
       .col-lg-* (pantallas grandes - ancho mayor a 992px)
       .col-xl-* (pantallas extra grandes - ancho mayor a 1200px)
-      * la cantidad de columnas que se desea que abarque (de 1 a 12)
+      * es la cantidad de columnas que se desea que abarque (de 1 a 12)
   -->
 		<div class="row">
 			<div class="col-sm-1 grid12 text-center">col-sm-1</div>
@@ -74,14 +80,23 @@
 			<div class="col-sm-1 grid12 text-center">11</div>
 			<div class="col-sm-1 grid12 text-center">12</div>
 		</div>
-	</div>
+	</div> <!-- fin de container-fluid -->
 
 	<!-- Contenedor de ancho definido.  -->
 	<div class="container mb-3">
 		<h1>Página Bootstrap Fija</h1>
 		<p>.container ó .container-xx</p>
+
+		<!-- Ancho automático de columnas -->
 		<div class="row">
-			<!-- 12 columnas en total -->
+			<div class="col grid12">col</div>
+			<div class="col grid12">col</div>
+			<div class="col grid12">col</div>
+			<div class="col grid12">col</div>
+		</div>
+
+		<!-- 12 columnas en total -->
+			<div class="row">
 			<div class="col-sm-1 grid12 text-center">col-sm-1</div>
 			<div class="col-sm-1 grid12 text-center">2</div>
 			<div class="col-sm-1 grid12 text-center">3</div>
@@ -95,27 +110,22 @@
 			<div class="col-sm-1 grid12 text-center">11</div>
 			<div class="col-sm-1 grid12 text-center">12</div>
 		</div>
-		<div class="row">
-			<!-- fila de div de 4 columnas cada uno -->
+
+		<!-- fila de div de 4 columnas cada uno -->
+			<div class="row">
 			<div class="col-sm-4 grid12">col-sm-4 - 1</div>
 			<div class="col-sm-4 grid12">col-sm-4 - 2</div>
 			<div class="col-sm-4 grid12">col-sm-4 - 3</div>
 		</div>
 
-		<!-- Ancho automático de columnas -->
-		<div class="row">
-			<div class="col grid12">col</div>
-			<div class="col grid12">col</div>
-			<div class="col grid12">col</div>
-			<div class="col grid12">col</div>
-		</div>
 		<!-- Dos columnas de ancho destinto que suman 12 (o menos)  -->
-		<div class="row gx-5">
-			<div class="col-sm-4 grid12">col-sm-4</div>
-			<div class="col-sm-8 grid12">col-sm-8</div>
+		<div class="row">
+			<div class="col-sm-5 grid12">col-sm-5</div>
+			<div class="col-sm-7 grid12">col-sm-7</div>
 		</div>
 	</div>
 
+	<!-- Alineación horizontal y vertical del contenido  -->
 	<div class="container text-center mb-3">
 		<div class="row grid22">
 			<div class="col grid12 align-self-start">
@@ -131,8 +141,7 @@
 	</div>
 
 	<div class="container mb-3">
-		<!-- ESPACIADO  -->
-		<!-- 
+		<!-- ESPACIADO
     m- para clases que marcan el margin
     p- para clases que marcan el padding
 		 -0 -1 -2 -3 -4 -5 -auto
@@ -148,8 +157,6 @@
 			Elemento centrado
 		</div>
 	</div>
-
-	
 
 	<!-- TEXTOS Y TIPOGRAFÍAS -->
 	<div class="container mb-3">
@@ -168,20 +175,12 @@
 		<h1 class="display-4">Display 4</h1>
 		<h1 class="display-5">Display 5</h1>
 		<h1 class="display-6">Display 6</h1>
-
-		<p>Esto es un <mark>texto resaltado mark</mark>.</p>
-		<p>Esto es una <abbr title="Sigla">SIGLA</abbr></p>
-		<p>kbd: esto es un atajo de teclado. <kbd>Alt+5</kbd></p>
-
-		<blockquote class="blockquote text-center">
-			<p>.blockquote Esto es un bloque de cita, que contiene una frase.</p>
-			<figcaption class="blockquote-footer">
-				El autor famoso <cite title="Source Title">Título de fuente</cite>
-			</figcaption>
-
-		</blockquote>
-
-
+</div>
+<div class="container mb-3">
+	<h2>Textos y Tipografías</h2>
+		<p>mark: Esto es un <mark>texto resaltado mark</mark>.</p>
+		<p>abbr: Esto es una <abbr title="Sigla. Significa algo.">SIGLA</abbr></p>
+		<p>kbd: Esto es un atajo de teclado. <kbd>Alt+5</kbd></p>
 		<p>del: Esto es un <del>texto eliminado.</del></p>
 		<p>s: Esto es un <s>texto corregido.</s></p>
 		<p>inst: Esto es un <ins>texto agregado.</ins></p>
@@ -189,16 +188,25 @@
 		<p>small: Esto es un <small>texto pequeño.</small></p>
 		<p>strong: Esto es un <strong>texto en negritas.</strong></p>
 		<p>em: Esto es un <em>texto en itálicas.</em></p>
+		<blockquote class="blockquote">
+			<p>.blockquote Esto es un bloque de cita, que contiene una frase.</p>
+			<figcaption class="blockquote-footer">
+				El autor famoso <cite title="Source Title">Título de fuente</cite>
+			</figcaption>
+		</blockquote>
+		<p class="fw-bold">Esto es un texto Bold .</p>
+		<p class="fw-bolder">Esto es un texto Bolder .</p>
+		<p class="fw-light">Esto es un texto Light .</p>
 		<p class="lead">Esto es un texto resaltado.</p>
 		<p class="small">Esto es un texto pequeño (80%) </p>
-		<p class="text-sm-left">Esto es un texto alineado a la izquierda en pantallas sm.</p>
-		<p class="text-break">Esto es un texto largo que previene que se quiebre si este sobrepasa el ancho de su
-			contenedor.</p>
+		<p class="text-sm-start">Esto es un texto alineado a la izquierda en pantallas pequeñas.</p>
 		<p class="text-lg-center">Esto es un texto centrado, pero sólo en pantallas grandes (lg)</p>
 		<p class="text-center">Esto es un texto siempre centrado.</p>
-		<p class="text-decoration-none">Esto es un <a href="#">link sin decorado</a> </p>
-		<p class="text-md-right">Esto es un texto a la derecha en pantallas medianas y grandes.</p>
-		<p class="text-monospace">Esto es un texto monoespaciado.</p>
+		<p class="text-break">Esto es un texto largo que previene que se quiebre si este sobrepasa el ancho de su
+			contenedor.</p>
+		<a href="#" class="text-decoration-none">Este es un link sin decorado</a>
+		<p class="text-md-end">Esto es un texto a la derecha en pantallas medianas y grandes.</p>
+		<p class="font-monospace">Esto es un texto monoespaciado.</p>
 		<p class="text-justsiy">Esto es un texto justsiicado. </p>
 		<p class="text-nowrap">Esto es un texto "nowrap", o sea que por muy largo que sea no se va a cortar si se pasa del
 			ancho de pantalla del despositivo, generando una barra lateral.</p>
@@ -208,19 +216,19 @@
 		</p>
 		<p class="text-reset">Esto es un texto sin color, resetea el color.</p>
 		<p class="text-capitalize">Esto es un texto CAPITALIZADO. La primera letra en mayúsculas.</p>
+		<p class="fs-3">.fs-3 tamaños de texto</p>
 
 		<!-- Otras clases de formato de Texto:
-  .list-unstyled 	Remueve el estilo de lista en elementos de lista <ul> y <ol>
-  .list-inline 	Pone todos los elementos de una lista en una sola línea
-  .pre-scrollable 	Hace que un elemento <pre> tenga barra de scroll 
+	  .list-unstyled 	Remueve el estilo de lista en elementos de lista <ul> y <ol>
+  	.list-inline 	Pone todos los elementos de una lista en una sola línea
+  	.pre-scrollable 	Hace que un elemento <pre> tenga barra de scroll 
 -->
 
 		<!-- COLORES -->
-		<!-- los colores se manejan con text-[color], bg-[color] y text-bg-[color] -->
-		<div class="container">
+		<!-- los colores se manejan con text-[color], bg-[color] y text-bg-[color] que es la combinación más adecuada -->
+		<div class="container mb-3">
 			<h2>Colores contextuales</h2>
 			<p>Se usan para dar "significado mediante colores":</p>
-			<p class="text-muted">Este texto está silenciado.</p>
 			<p class="text-primary">Este texto es importante.</p>
 			<p class="text-success">Este texto indica operación exitosa.</p>
 			<p class="text-info">Este texto representa información.</p>
@@ -229,13 +237,13 @@
 			<p class="text-secondary">Texto secundario.</p>
 			<p class="text-dark">Este texto es gris oscuro.</p>
 			<p class="text-body">Este texto es del color por default (generalmente negro).</p>
-			<p class="text-light">Este texto es gris con fondo blanco.</p>
-			<p class="text-white">Este texto es blanco con fondo negro.</p>
+			<p class="text-light bg-black">Este texto es gris con fondo negro.</p>
+			<p class="text-white bg-dark text-opacity-75">Este texto es blanco con fondo oscuro.</p>
+			<p class="text-muted">Este texto está silenciado.</p>
 		</div>
-		<div class="container">
+		<div class="container mb-3">
 			<h2>Colores contextuales en links</h2>
 			<p>Los colores contextuales también pueden ser usados en links.</p>
-			<a href="#" class="link-muted">.link-muted</a>
 			<a href="#" class="link-primary">.link-primary</a>
 			<a href="#" class="link-success">.link-success</a>
 			<a href="#" class="link-info">.link-info</a>
@@ -244,10 +252,9 @@
 			<a href="#" class="link-secondary">.link-secondary</a>
 			<a href="#" class="link-dark">.link-dark</a>
 			<a href="#" class="link-body">.link-body</a>
-			<a href="#" class="link-light">.link-light</a>
+			<a href="#" class="link-light bg-dark">.link-light</a>
+			<a href="#" class="link-muted">.link-muted</a>
 		</div>
-
-
 		<div class="container mb-3">
 			<h2>Colores Contextuales de fondos</h2>
 			<p>Se usan estos colores de fondo para dar significado a los párrafos.</p>
@@ -468,8 +475,8 @@
 			<img src="img/imagen.jpg" class="rounded float-end" alt="Curuzú Cuatiá">
 			<img src="img/imagen.jpg" class="img-thumbnail mx-auto d-block" alt="Curuzú Cuatiá">
 			<img src="img/imagen.jpg" class="rounded-circle mx-auto d-block" alt="Curuzú Cuatiá">
-			<!--  .float-right hace que la imagen flote a la derecha
-      .float-left hace que la imagen flote a la izquierda
+			<!--  .float-end hace que la imagen flote a la derecha
+      .float-start hace que la imagen flote a la izquierda
       .mx-auto .d-block estos dos combinados se usan para centrar una imagen (margin:auto desplay:block) -->
 			<img src="img/imagen-grande.jpg" class="img-fluid w-50 mx-auto d-block" alt="Curuzú Cuatiá">
 			<!-- Para hacer que una imagen sea responsive, usamos .img-fluid -->
@@ -1041,18 +1048,16 @@
 	<!-- FLOAT -->
 	<div class="container mb-3">
 		<h2>Float</h2>
-		<!-- .float-right
-      .float-left
-      .clearfix
+		<!-- .float-start .clearfix .float-none .float-end
   -->
 		<div class="clearfix">
-			<span class="float-left">Float izquierda</span>
-			<span class="float-right">Float derecha</span>
+			<span class="float-start">Float izquierda</span>
+			<span class="float-end">Float derecha</span>
 		</div>
-		<div class="float-sm-right">Flota a la derecha en pantallas pequeñas o más</div><br>
-		<div class="float-md-right">Flota a la derecha en pantallas medianas o más</div><br>
-		<div class="float-lg-right">Flota a la derecha en pantallas grandes o más</div><br>
-		<div class="float-xl-right">Flota a la derecha en pantallas extra grandes o más</div><br>
+		<div class="float-sm-end">Flota a la derecha en pantallas pequeñas o más</div><br>
+		<div class="float-md-end">Flota a la derecha en pantallas medianas o más</div><br>
+		<div class="float-lg-end">Flota a la derecha en pantallas grandes o más</div><br>
+		<div class="float-xl-end">Flota a la derecha en pantallas extra grandes o más</div><br>
 		<div class="float-none">Float none</div>
 	</div>
 
