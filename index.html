@@ -30,7 +30,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	  La otra forma es linkear a un CDN (Content Delivery Network) externo, como se muestra a continuación: 
   -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<!-- Ventajas de usar un CDN externo:
     - Si ya se descargó al entrar otro sitio web que usa Bootstrap, tu página carga más rápido
@@ -48,15 +48,1267 @@
   .container-fluid 		es la clase que provee un deseño responsive del ancho completo 100% de pantalla
 	-->
 	<div class="container-fluid mb-3">
-	<!-- Aclaración: .grid12 y .grid22 son clases que creamos sólo para este documento, le da borde 
+		<!-- Aclaración: .grid12 y .grid22 son clases que creamos sólo para este documento, le da borde 
 		y color de fondo a algunos elementos.  -->
-	<!-- .mb-3 es una clase css para darle margen inferior a los contenedores de este documento  -->
+		<!-- .mb-3 es una clase css para darle margen inferior a los contenedores de este documento  -->
+
+		<h1>Página Bootstrap 5.3.1 Fluída</h1>
+		<p>.container-fluid (ancho 100%)</p>
+
+		<!-- Bootstrap organiza todo en un sistema de "grilla" de 12 columnas máximo, basado en flexbox de CSS.
+	Este sistema de columnas es "responsive" y se adaptan al tamaño de pantalla, y de ser necesario se 
+	reacomodan una debajo de la otra.
+	Para ello se usan las siguientes clases
+		.row para cada fila
+		para las columnas dentro de cada fila:
+		.col (maneja automáticamente el tamaño)
+		.col-* (dispositivos extra pequeños - ancho de pantalla menor a 576px)
+		.col-sm-* (pantallas pequeñas - ancho mayor a 576px)
+		.col-md-* (pantallas medianas - ancho mayor a 768px)
+		.col-lg-* (pantallas grandes - ancho mayor a 992px)
+		.col-xl-* (pantallas extra grandes - ancho mayor a 1200px)
+		.col-xxl-* (pantallas extra extra grandes - ancho mayor a 1400px)
+		* es la cantidad de columnas que se desea que abarque (de 1 a 12)
+-->
+		<div class="row">
+			<div class="col-sm-1 grid12 text-center">col-sm-1</div>
+			<div class="col-sm-2 grid12 text-center">col-sm-2</div>
+			<div class="col-sm-3 grid12 text-center">col-sm-3</div>
+			<!-- este div ocupará 3 columnas -->
+			<div class="col-sm-1 grid12 text-center">7</div>
+			<div class="col-sm-1 grid12 text-center">8</div>
+			<div class="col-sm-1 grid12 text-center">9</div>
+			<div class="col-sm-1 grid12 text-center">10</div>
+			<div class="col-sm-1 grid12 text-center">11</div>
+			<div class="col-sm-1 grid12 text-center">12</div>
+		</div>
+	</div> <!-- fin de container-fluid -->
+
+	<!-- Contenedor de ancho definido.  -->
+	<hr>
+	<div class="container mb-3">
+		<h1>Página Bootstrap 5.3.1 Fija</h1>
+		<p>.container ó .container-xx</p>
+
+		<!-- Ancho automático de columnas -->
+		<div class="row">
+			<div class="col grid12">col</div>
+			<div class="col grid12">col</div>
+			<div class="col grid12">col</div>
+			<div class="col grid12">col</div>
+		</div>
+
+		<!-- 12 columnas en total -->
+		<div class="row">
+			<div class="col-sm-1 grid12 text-center">col-sm-1</div>
+			<div class="col-sm-1 grid12 text-center">2</div>
+			<div class="col-sm-1 grid12 text-center">3</div>
+			<div class="col-sm-1 grid12 text-center">4</div>
+			<div class="col-sm-1 grid12 text-center">5</div>
+			<div class="col-sm-1 grid12 text-center">6</div>
+			<div class="col-sm-1 grid12 text-center">7</div>
+			<div class="col-sm-1 grid12 text-center">8</div>
+			<div class="col-sm-1 grid12 text-center">9</div>
+			<div class="col-sm-1 grid12 text-center">10</div>
+			<div class="col-sm-1 grid12 text-center">11</div>
+			<div class="col-sm-1 grid12 text-center">12</div>
+		</div>
+
+		<!-- fila de div de 4 columnas cada uno -->
+		<div class="row">
+			<div class="col-sm-4 grid12">col-sm-4 - 1</div>
+			<div class="col-sm-4 grid12">col-sm-4 - 2</div>
+			<div class="col-sm-4 grid12">col-sm-4 - 3</div>
+		</div>
+
+		<!-- Dos columnas de ancho destinto que suman 12 (o menos)  -->
+		<div class="row">
+			<div class="col-sm-5 grid12">col-sm-5</div>
+			<div class="col-sm-7 grid12">col-sm-7</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- ALINEADO horizontal y vertical del contenido  -->
+	<div class="container mb-3">
+		<h1>Alineado</h1>
+		<div class="container text-center">
+			<div class="row grid22">
+				<div class="col grid12 align-self-start">
+					align-self-start
+				</div>
+				<div class="col grid12 align-self-center">
+					align-self-center
+				</div>
+				<div class="col grid12 align-self-end">
+					align-self-end
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- ESPACIADO -->
+	<div class="container mb-3">
+		<!-- 
+	m- para clases que marcan el margin
+	p- para clases que marcan el padding
+	 -0 -1 -2 -3 -4 -5 -auto
+
+	t- para clases que marcan el margin-top o padding-top
+	b- para clases que marcan el margin-bottom o padding-bottom
+	s- (start) para clases que marcan el margin-left or padding-left 
+	e- (end) para clases que marcan el margin-right or padding-right 
+	x- para clases que marcan ambos *-left and *-right
+	y- para clases que marcan ambos *-top and *-bottom
+ -->
+		<div class="mx-auto grid12 text-center" style="width: 200px;">
+			Elemento centrado
+		</div>
+	</div>
+
+	<hr>
+	<!-- TEXTOS Y TIPOGRAFÍAS -->
+	<div class="container mb-3">
+		<h1>Título h1 heading (2.5rem = 40px)</h1>
+		<h2>Título h2 heading (2rem = 32px)</h2>
+		<p class="h2">Párrafo con estilo de h2</p>
+		<h3>Título h3 heading (1.75rem = 28px)</h3>
+		<h4>Título h4 heading (1.5rem = 24px)</h4>
+		<h5>Título h5 heading (1.25rem = 20px)</h5>
+		<h6>Título h6 heading (1rem = 16px)</h6>
+		<h3>Título h3 <small class="text-muted">con texto secundario borroso</small>
+		</h3>
+		<h1 class="display-1">Display 1</h1>
+		<h1 class="display-2">Display 2</h1>
+		<h1 class="display-3">Display 3</h1>
+		<h1 class="display-4">Display 4</h1>
+		<h1 class="display-5">Display 5</h1>
+		<h1 class="display-6">Display 6</h1>
+	</div>
+	<div class="container mb-3">
+		<h2>Textos y Tipografías</h2>
+		<p>mark: Esto es un <mark>texto resaltado mark</mark>.</p>
+		<p>abbr: Esto es una <abbr title="Sigla. Significa algo.">SIGLA</abbr></p>
+		<p>kbd: Esto es un atajo de teclado. <kbd>Alt+5</kbd></p>
+		<p>del: Esto es un <del>texto eliminado.</del></p>
+		<p>s: Esto es un <s>texto corregido.</s></p>
+		<p>inst: Esto es un <ins>texto agregado.</ins></p>
+		<p>u: Esto es un <u>texto subrayado.</u></p>
+		<p>small: Esto es un <small>texto pequeño.</small></p>
+		<p>strong: Esto es un <strong>texto en negritas.</strong></p>
+		<p>em: Esto es un <em>texto en itálicas.</em></p>
+		<blockquote class="blockquote">
+			<p>.blockquote Esto es un bloque de cita, que contiene una frase.</p>
+			<figcaption class="blockquote-footer">
+				El autor famoso <cite title="Source Title">Título de fuente</cite>
+			</figcaption>
+		</blockquote>
+		<p class="fw-bold">Esto es un texto Bold .</p>
+		<p class="fw-bolder">Esto es un texto Bolder .</p>
+		<p class="fw-light">Esto es un texto Light .</p>
+		<p class="lead">Esto es un texto resaltado.</p>
+		<p class="small">Esto es un texto pequeño (80%) </p>
+		<p class="text-sm-start">Esto es un texto alineado a la izquierda en pantallas pequeñas.</p>
+		<p class="text-lg-center">Esto es un texto centrado, pero sólo en pantallas grandes (lg)</p>
+		<p class="text-center">Esto es un texto siempre centrado.</p>
+		<p class="text-break">Esto es un texto largo que previene que se quiebre si este sobrepasa el ancho de su
+			contenedor.</p>
+		<a href="#" class="text-decoration-none">Este es un link sin decorado</a>
+		<p class="text-md-end">Esto es un texto a la derecha en pantallas medianas y grandes.</p>
+		<p class="font-monospace">Esto es un texto monoespaciado.</p>
+		<p class="text-justsiy">Esto es un texto justsiicado. </p>
+		<p class="text-nowrap">Esto es un texto "nowrap", o sea que por muy largo que sea no se va a cortar si se pasa del
+			ancho de pantalla del despositivo, generando una barra lateral.</p>
+		<p class="text-lowercase">Esto es un texto lowercase. TODO está EN MINÚSCULAS aunque lo haya escrito EN MAYÚSCULAS.
+		</p>
+		<p class="text-uppercase">Esto es un texto uppercase. TODO está EN MAYÚSCULAS aunque lo haya escrito EN MINÚSCULAS.
+		</p>
+		<p class="text-reset">Esto es un texto sin color, resetea el color.</p>
+		<p class="text-capitalize">Esto es un texto CAPITALIZADO. La primera letra en mayúsculas.</p>
+		<p class="fs-3">.fs-3 tamaños de texto</p>
+
+		<!-- Otras clases de formato de Texto:
+	  .list-unstyled 	Remueve el estilo de lista en elementos de lista <ul> y <ol>
+  	.list-inline 	Pone todos los elementos de una lista en una sola línea
+  	.pre-scrollable 	Hace que un elemento <pre> tenga barra de scroll 
+	-->
+
+		<hr>
+
+		<!-- COLORES -->
+		<!-- los colores se manejan con text-[color], bg-[color] y text-bg-[color] que es la combinación más adecuada -->
+		<div class="container mb-3">
+			<h2>Colores contextuales</h2>
+			<p>Se usan para dar "significado mediante colores":</p>
+			<p class="text-primary">Este texto es importante.</p>
+			<p class="text-success">Este texto indica operación exitosa.</p>
+			<p class="text-info">Este texto representa información.</p>
+			<p class="text-warning">Este texto representa una advertencia.</p>
+			<p class="text-danger">Este texto representa una alarma.</p>
+			<p class="text-secondary">Texto secundario.</p>
+			<p class="text-dark">Este texto es gris oscuro.</p>
+			<p class="text-body">Este texto es del color por default (generalmente negro).</p>
+			<p class="text-light bg-black">Este texto es gris con fondo negro.</p>
+			<p class="text-white bg-dark text-opacity-75">Este texto es blanco con fondo oscuro.</p>
+			<p class="text-muted">Este texto está silenciado.</p>
+		</div>
+		<div class="container mb-3">
+			<h2>Colores contextuales en links</h2>
+			<p>Los colores contextuales también pueden ser usados en links.</p>
+			<a href="#" class="link-primary">.link-primary</a>
+			<a href="#" class="link-success">.link-success</a>
+			<a href="#" class="link-info">.link-info</a>
+			<a href="#" class="link-warning">.link-warning</a>
+			<a href="#" class="link-danger">.link-danger</a>
+			<a href="#" class="link-secondary">.link-secondary</a>
+			<a href="#" class="link-dark">.link-dark</a>
+			<a href="#" class="link-body">.link-body</a>
+			<a href="#" class="link-light bg-dark">.link-light</a>
+			<a href="#" class="link-muted">.link-muted</a>
+		</div>
+		<div class="container mb-3">
+			<h2>Colores Contextuales de fondos</h2>
+			<p>Se usan estos colores de fondo para dar significado a los párrafos.</p>
+			<p>También se puede agregar las clases .text-* para un color de letra dsierente:</p>
+			<p class="text-bg-primary p-3">Este texto es importante.</p>
+			<p class="text-bg-success p-3">Este texto indica éxito.</p>
+			<p class="text-bg-info p-3">Este texto representa información.</p>
+			<p class="text-bg-warning p-3">Este texto representa una advertencia.</p>
+			<p class="text-bg-danger p-3">Este texto representa una alarma, peligro.</p>
+			<p class="text-bg-secondary p-3">Texto secundario.</p>
+			<p class="text-bg-dark p-3">Fondo gris coscuro con texto blanco.</p>
+			<p class="text-bg-light p-3">Fondo gris claro.</p>
+		</div>
+
+		<hr>
+
+		<!-- TABLAS -->
+		<div class="container">
+			<h2>Tabla básica responsive</h2>
+			<p>La clase .table agrega un deseño básico, con mayor padding y divesores horizontales:</p>
+			<div class="table-responsive">
+				<!-- .table-responsive usado en el contenedor de la tabla, le agrega una barra de desplazamiento horizontal -->
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Neri</td>
+							<td>Tisocco</td>
+							<td>neritisocco@gmail.com</td>
+						</tr>
+						<tr>
+							<td>María</td>
+							<td>Perez</td>
+							<td>maria@ejemplo.com</td>
+						</tr>
+						<tr>
+							<td>Julia</td>
+							<td>Gomez</td>
+							<td>julia@example.com</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div> <!-- Fin Tabla Básica -->
+
+		<!-- .table-striped esta clase agrega franjas de cebra a la tabla: -->
+		<div class="container">
+			<h2>Filas en franjas de cebras.</h2>
+			<p>La clase .table-striped le da franjas de cebra intercaladas a las filas:</p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Neri</td>
+						<td>Tisocco</td>
+						<td>neritisocco@gmail.com</td>
+					</tr>
+					<tr>
+						<td>María</td>
+						<td>Perez</td>
+						<td>maria@ejemplo.com</td>
+					</tr>
+					<tr>
+						<td>Julia</td>
+						<td>Gomez</td>
+						<td>julia@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 
+		<div class="container">
+			<h2>Tabla con bordes</h2>
+			<p>La clase .table-bordered agrega bordes a todos los lados de la tabla. La clase .table-borderless los quita:</p>
+			<table class="table table-bordered border-primary">
+				<!-- .table-bordered agrega bordes a la tabla -->
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Neri</td>
+						<td>Tisocco</td>
+						<td>neritisocco@gmail.com</td>
+					</tr>
+					<tr>
+						<td>María</td>
+						<td>Perez</td>
+						<td>maria@ejemplo.com</td>
+					</tr>
+					<tr>
+						<td>Julia</td>
+						<td>Gomez</td>
+						<td>julia@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-	<!-- Debemos agregar Librarías JavaScript de Bootstrap  -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
-		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-	</script>
+		<div class="container">
+			<h2>Tabla con efecto hover</h2>
+			<p>La clase .table-hover agrega un efecto de cambio de color cuando se pasa por una fila:</p>
+			<!-- La clase .table-hover agrega un efecto de cambio de color cuando se pasa por una fila:  -->
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Neri</td>
+						<td>Tisocco</td>
+						<td>neritisocco@gmail.com</td>
+					</tr>
+					<tr>
+						<td>María</td>
+						<td>Perez</td>
+						<td>maria@ejemplo.com</td>
+					</tr>
+					<tr>
+						<td>Julia</td>
+						<td>Gomez</td>
+						<td>julia@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="container">
+			<h2>Tabla Oscura, Con franjas y Resaltada con efecto Hover</h2>
+			<p>La clase .table-dark crea una tabla con fondo oscuro y letra clara:</p>
+			<!-- Se pueden combinar table-dark table-striped table-hover -->
+			<table class="table table-dark table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Neri</td>
+						<td>Tisocco</td>
+						<td>neritisocco@gmail.com</td>
+					</tr>
+					<tr>
+						<td>María</td>
+						<td>Perez</td>
+						<td>maria@ejemplo.com</td>
+					</tr>
+					<tr>
+						<td>Julia</td>
+						<td>Gomez</td>
+						<td>julia@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="container">
+			<h2>Tabla pequeña, con Colores contextuales en filas y Cabecera Negra</h2>
+			<!-- Se pueden combinar table-dark table-striped table-hover -->
+			<!-- .table-primary .table-success .table-danger .table-info .table-warning .table-active .table-secondary .table-light .table-dark -->
+			<table class="table table-sm">
+				<!-- .table-sm hace que la tabla sea más chica, acortando el cell padding a la mitad -->
+				<thead class="thead-dark">
+					<!-- .thead-dark le da un color oscuro a los headers y .thead-light un color gris claro -->
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-success">
+						<!-- Se puede usar los Colores Contextuales en <table>, <tr> y <td> usando la clase .table-* con el color -->
+						<td>Neri</td>
+						<td>Tisocco</td>
+						<td>neritisocco@gmail.com</td>
+					</tr>
+					<tr class="table-danger">
+						<td>María</td>
+						<td>Perez</td>
+						<td>maria@ejemplo.com</td>
+					</tr>
+					<tr class="table-warning">
+						<td>Julia</td>
+						<td>Gomez</td>
+						<td>julia@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<hr>
+
+		<!-- IMAGENES -->
+		<div class="container mb-3">
+			<h2>Imágenes</h2>
+			<img src="img/imagen.jpg" class="rounded float-start" alt="Curuzú Cuatiá">
+			<img src="img/imagen.jpg" class="rounded float-end" alt="Curuzú Cuatiá">
+			<img src="img/imagen.jpg" class="img-thumbnail mx-auto d-block" alt="Curuzú Cuatiá">
+			<img src="img/imagen.jpg" class="rounded-circle mx-auto d-block" alt="Curuzú Cuatiá">
+			<!--  .float-end hace que la imagen flote a la derecha
+					.float-start hace que la imagen flote a la izquierda
+					.mx-auto .d-block estos dos combinados se usan para centrar una imagen (margin:auto desplay:block) -->
+			<img src="img/imagen-grande.jpg" class="img-fluid w-50 mx-auto d-block" alt="Curuzú Cuatiá">
+			<!-- Para hacer que una imagen sea responsive, usamos .img-fluid -->
+		</div>
+
+		<hr>
+
+		<!-- ALERTAS -->
+		<!-- Alertas se crean usando la clase .alert seguida de .alert-success .alert-info .alert-warning 
+			.alert-danger .alert-primary .alert-secondary .alert-light .alert-dark
+			usamos .alert-link para el color del link  
+	  -->
+		<div class="container mb-3">
+			<h2>Alertas</h2>
+			<div class="alert alert-success" role="alert">
+				<strong>¡Éxito!</strong> Indica que una operación se realizó correctamente <a href="#" class="alert-link">link
+					de
+					alerta.</a>.
+			</div>
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<strong>¡Peligro!</strong> Indica que ocurrió un grave error.
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- BOTONES -->
+		<div class="container mb-3">
+			<h2>Botones Contextuales</h2>
+			<button type="button" class="btn">Botón básico</button>
+			<button type="button" class="btn btn-primary">Principal</button>
+			<button type="button" class="btn btn-secondary">Secundario</button>
+			<button type="button" class="btn btn-success">Éxito</button>
+			<button type="button" class="btn btn-info">Info</button>
+			<button type="button" class="btn btn-warning">Advertencia</button>
+			<button type="button" class="btn btn-danger">Peligro</button>
+			<button type="button" class="btn btn-dark">Oscuro</button>
+			<button type="button" class="btn btn-light">Claro</button>
+			<button type="button" class="btn btn-link">Enlace</button>
+		</div>
+		<div class="container mb-3">
+			<!-- Las clases de botones contextuales pueden ser de tipo elemento <a>, <button>, or <input>: -->
+			<a href="#" class="btn btn-info" role="button">Link</a>
+			<button type="button" class="btn btn-info">Botón</button>
+			<input type="button" class="btn btn-info" value="Input">
+			<input type="submit" class="btn btn-info" value="Enviar">
+			<!-- Un botón puede ser de sólo borde -->
+			<button type="button" class="btn btn-outline-danger">Sólo Borde</button>
+		</div>
+
+		<div class="container mb-3">
+			<button type="button" class="btn btn-primary btn-lg">Grande</button>
+			<button type="button" class="btn btn-primary">Normal</button>
+			<button type="button" class="btn btn-primary btn-sm">Chico</button>
+		</div>
+
+		<div class="container mb-3">
+			<div class="row mb-1">
+				<div class="d-grid gap-2 col-6 mx-auto">
+					<button class="btn btn-primary" type="button">Botón ancho centrado</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- Si cambio el ancho de esta fila de 9 columnas, el botón se adapta -->
+				<div class="col-9 d-grid gap-2">
+					<button class="btn btn-primary" type="button">Botón ancho completo del bloque</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mb-3">
+			<button type="button" class="btn btn-primary active">Botón Activo</button>
+			<button type="button" class="btn btn-primary" desabled>Botón desactivado</button>
+			<a href="#" class="btn btn-primary desabled">Link desctivado</a>
+			<!--  .active hace que el botón aparezca presionado
+							El atributo desabled hace que el botón no pueda presionarse.
+						En el caso de <a> hay que usar la clase .desabled porque no acepta atributo  -->
+		</div>
+
+		<div class="container mb-2">
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-primary">Grupo</button>
+				<button type="button" class="btn btn-secondary">de</button>
+				<button type="button" class="btn btn-danger">Botones</button>
+			</div>
+			<!--  .btn-group-lg para botones grandes
+							.btn-group-sm para botones chicos -->
+		</div>
+
+		<div class="container mb-2">
+			<div class="btn-group-vertical">
+				<!-- Grupo de botones, pero vertical -->
+				<button type="button" class="btn btn-primary">Grupo</button>
+				<button type="button" class="btn btn-primary">de</button>
+				<button type="button" class="btn btn-primary">Botones</button>
+			</div>
+		</div>
+
+		<div class="container mb-3">
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-primary">Grupo</button>
+				<button type="button" class="btn btn-primary">de</button>
+
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Botones
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Anidados con link</a></li>
+						<li><a class="dropdown-item" href="#">Anidados con link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- BADGES -->
+		<!-- text-bg-color hace que combien color de fondo y de letra -->
+		<!-- .rounded-pill le da borde redondeado -->
+		<div class="container mb-3">
+			<h2>Badges <span class="badge bg-secondary">Nuevo</span></h2>
+			<span class="badge bg-primary">Primary</span>
+			<span class="badge bg-secondary">Secondary</span>
+			<span class="badge bg-success">Success</span>
+			<span class="badge bg-danger">Danger</span>
+			<span class="badge bg-warning">Warning</span>
+			<span class="badge bg-pill badge-info">Info</span>
+			<span class="badge bg-pill badge-light">Light</span>
+			<span class="badge bg-pill badge-dark">Dark</span>
+		</div>
+		<div class="container mb-3">
+			<button type="button" class="btn btn-primary">
+				Mensaje <span class="badge text-bg-danger">4</span>
+			</button>
+			<button type="button" class="btn btn-primary position-relative">
+				Mensaje
+				<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+					4
+					<span class="visually-hidden">Mensajes sin leer</span>
+				</span>
+			</button>
+		</div>
+
+		<hr>
+
+		<!-- PROGRESS BAR -->
+		<div class="container mb-3">
+			<h2>Progress Bar</h2>
+			<div class="progress" style="height:20px">
+				<div class="progress-bar" style="width:50%;height:20px">50%</div>
+				<div class="progress-bar bg-success progress-bar-striped" style="width:30%;height:20px">30%</div>
+				<!-- podemos elegir el color y el ancho y alto y el texto que se muestre -->
+				<div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:20%">20%</div>
+				<!-- podemos elegir otro color contextual, y que las franjas sean animadas -->
+			</div>
+		</div>
+
+		<!-- DISPLAY  -->
+		<div class="container mb-3">
+			<div class="d-inline p-2 text-bg-primary">d-inline</div>
+			<div class="d-inline p-2 text-bg-dark">d-inline</div>
+			<span class="d-block p-2 text-bg-primary">d-block</span>
+			<span class="d-block p-2 text-bg-dark">d-block</span>
+			<div class="d-lg-none">hide on lg and wider screens</div>
+			<div class="d-none d-lg-block">hide on screens smaller than lg</div>
+		</div>
+
+		<!-- SPINNERS -->
+		<div class="container mb-3">
+			<h2>Spinners</h2>
+			<div class="spinner-border text-muted"></div>
+			<div class="spinner-border text-primary"></div>
+			<div class="spinner-border text-success"></div>
+			<div class="spinner-border text-info spinner-border-sm"></div>
+			<div class="spinner-border text-warning spinner-border-sm"></div>
+			<div class="spinner-border text-danger spinner-border-sm"></div>
+			<div class="spinner-grow text-secondary"></div>
+			<div class="spinner-grow text-dark"></div>
+			<div class="spinner-grow text-light spinner-grow-sm"></div>
+			<button class="btn btn-primary">
+				<span class="spinner-border spinner-border-sm"></span>
+				Cargando...
+			</button>
+		</div>
+
+		<!-- PAGINACIÓN  -->
+		<div class="container mb-3">
+			<h2>Paginación</h2>
+			<!--  .pagination-lg para bloques más grandes
+									.pagination-sm para bloques de botones más pequeños
+									.justsiy-content-center para centrarlo
+									.justsiy-content-end para ponerlo a la derecha
+						-->
+			<nav aria-label="...">
+				<ul class="pagination">
+					<li class="page-item disabled">
+						<span class="page-link">Ant</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item active" aria-current="page">
+						<span class="page-link">2</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#">Sig</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- BREADCRUMBS (migajas) -->
+		<div class="container mb-3">
+			<h2>Breadcrumbs (migajas)</h2>
+			<!-- breadcrumb indica la localización actual de la página en una jerarquía.-->
+			<nav aria-label="breadcrumb">
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Fotos</a></li>
+					<li class="breadcrumb-item"><a href="#">Verano 2017</a></li>
+					<li class="breadcrumb-item"><a href="#">Italia</a></li>
+					<li class="breadcrumb-item active">Roma</li>
+				</ul>
+			</nav>
+		</div>
+
+		<hr>
+
+		<!-- LIST GROUPS -->
+		<div class="container mb-3">
+			<h2>List Groups</h2>
+			<ul class="list-group">
+				<!--  .list-group-flush remueve los bordes redondeados de la lista 
+            .list-group-horizontal agregado a list-group hace que la lista sea horizontal 
+      -->
+				<li class="list-group-item active">Primero</li>
+				<li class="list-group-item">Segundo</li>
+				<li class="list-group-item">Tercero</li>
+				<a href="#" class="list-group-item list-group-item-action">Con link</a>
+				<a href="#" class="list-group-item desabled">Desactivado</a>
+				<li class="list-group-item list-group-item-danger">Peligro</li>
+				<a href="#" class="list-group-item list-group-item-action list-group-item-warning">Advertencia con link</a>
+				<!-- se puede usar los colores contextuales -->
+				<li class="list-group-item d-flex justsiy-content-between align-items-center">
+					Mensajes
+					<span class="badge badge-primary badge-pill">12</span>
+					<!-- Se pueden usar badges -->
+				</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<!-- CARDS (Cartas) -->
+		<!-- Una carta en Bootstrap 5 es una caja con borde y padding. 
+    Las cartas reemplazan los paneles de Bootstrap 3.
+    Se puede incluir headers, footers, content, colors, etc.
+		-->
+		<div class="container mb-3">
+			<h2>Cards (Cartas)</h2>
+			<div class="row justify-content-center align-items-center g-2">
+				<div class="col">
+					<div class="card" style="width:20rem">
+						<div class="card-header">Header</div>
+						<!-- Con  bg-success text-white se puede hacer que la carta tenga color contextual -->
+						<img class="card-img-top" src="img/avatar.png" alt="Imagen" style="width:100%">
+						<!-- .card-img-bottom para que la imagen vaya abajo -->
+						<div class="card-body">
+							<h4 class="card-title">Título</h4>
+							<h6 class="card-subtitle mb-2 text-muted">subtítulo</h6>
+							<p class="card-text">Esto es Texto.</p>
+							<a href="#" class="card-link">Link</a>
+							<a href="#" class="btn btn-primary">Botón</a>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Item 1</li>
+							<li class="list-group-item">Item 2</li>
+						</ul>
+						<div class="card-footer">Footer</div>
+					</div>
+
+				</div>
+				<div class="col">
+					<div class="card text-center" style="width:20rem">
+						<div class="card-header">Header</div>
+						<!-- Con  bg-success text-white se puede hacer que la carta tenga color contextual -->
+						<img class="card-img-top" src="img/avatar.png" alt="Imagen" style="width:100%">
+						<!-- .card-img-bottom para que la imagen vaya abajo -->
+						<div class="card-body">
+							<h4 class="card-title">Título</h4>
+							<h6 class="card-subtitle mb-2 text-muted">subtítulo</h6>
+							<p class="card-text">Esto es Texto.</p>
+							<a href="#" class="card-link">Link</a>
+							<a href="#" class="btn btn-primary">Botón</a>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Item 1</li>
+							<li class="list-group-item">Item 2</li>
+						</ul>
+						<div class="card-footer">Footer</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- DROPDOWN -->
+		<div class="container mb-3">
+			<h2>Dropdowns</h2>
+			<!--  .dropdown es un menú en cascada.
+									.dropdown-menu es la clase que crea la cascada
+									.dropdown-toggle y data-toggle="dropdown" para el botón de cascada
+									.dropright para que se alínee a la derecha
+									.dropleft para que se alínee a la izquierda -->
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Botón Cascada
+				</button>
+				<ul class="dropdown-menu">
+					<div class="dropdown-header">Header 1</div>
+					<li><a class="dropdown-item" href="#">Link 1</a></li>
+					<li><a class="dropdown-item" href="#">Link 2</a></li>
+					<div class="dropdown-divider"></div>
+					<li><a class="dropdown-item active" href="#">Activo</a></li>
+					<li><a class="dropdown-item disabled" href="#">Desactivado</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- COLAPSABLES -->
+		<div class="container mb-3">
+			<h2>Colapsable</h2>
+			<!-- Esconde el texto -->
+			<p>
+				<a class="btn btn-primary" data-bs-toggle="collapse" href="#ejemploColapsable" role="button"
+					aria-expanded="false" aria-controls="ejemploColapsable">
+					Link con href
+				</a>
+				<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ejemploColapsable"
+					aria-expanded="false" aria-controls="ejemploColapsable">
+					Botón con data-bs-target
+				</button>
+			</p>
+			<div class="collapse" id="ejemploColapsable">
+				<div class="card card-body">
+					<!-- .show para que por defecto esté mostrado y al hacer click se oculte -->
+					Lorem ipsum dolor sit amet, consectetur adipesicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					ques nostrud exercitation ullamco labores nesi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+
+		<!-- ACORDEÓN -->
+		<div class="container mb-3">
+			<h2>Acordeón</h2>
+			<!-- data-parent este atributo garantiza que al abrir un elemento los demás se cierren -->
+			<div class="accordion" id="ejemploAcordeon">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="cabeceraUno">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+							aria-expanded="true" aria-controls="collapseOne">
+							Item de Acordeón #1
+						</button>
+					</h2>
+					<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="cabeceraUno"
+						data-bs-parent="#ejemploAcordeon">
+						<div class="accordion-body">
+							<strong>Este es el primer item del acordeón.</strong> Se muestra por default, hasta que se hace click para
+							colapsarlo. Se puede cambiar su apariencia con las clases adecuadas.<code>.accordion-body</code>.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="cabeceraDos">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							Item de Acordeón #2
+						</button>
+					</h2>
+					<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="cabeceraDos"
+						data-bs-parent="#ejemploAcordeon">
+						<div class="accordion-body">
+							<strong>Este es el segundo item del acordeon.</strong> Está oculto por default hasta que se hace click
+							para cambiarlo. <code>.accordion-body</code>.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="cabeceraTres">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							Item de Acordeón #3
+						</button>
+					</h2>
+					<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="cabeceraTres"
+						data-bs-parent="#ejemploAcordeon">
+						<div class="accordion-body">
+							<strong>Este es el tercero.</strong> Está oculto por default hasta que se hace click para cambiarlo.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- TABS Y NAVS -->
+		<div class="container mb-3">
+			<h2>Tabs (Pestañas)</h2>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link 1</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link 2</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled">Desactivado</a>
+				</li>
+			</ul>
+		</div>
+		<div class="container mb-3">
+			<h2>Píldoras</h2>
+			<!-- Nav pills -->
+			<ul class="nav nav-pills">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled">Desactivado</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Tab panes -->
+		<div class="tab-content mb-3">
+			<h2>Tabs Panes</h2>
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+						type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Inicio</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+						type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Perfil</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+						type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contacto</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
+						type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
+						disabled>Desactivado</button>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+					tabindex="0">Inicio: Lorem ipsum dolor sit amet consectetur adipisicing elit. A ipsam minima sit, hic aperiam
+					id vero voluptatum, laboriosam, iure eos dicta! Perferendis dolore eum nihil porro. Quidem ratione pariatur
+					minus!</div>
+				<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+					Perfil: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempore sunt ratione. Possimus
+					ipsam aliquam sequi dolores facere consectetur officia, fugiat saepe corporis quis minus atque nihil beatae
+					animi dolor.</div>
+				<div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+					Contacto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex reprehenderit quod delectus odio, dolore
+					odit explicabo molestias voluptatibus, fuga et iste id, velit alias voluptates itaque rerum consequuntur
+					deleniti beatae.</div>
+				<div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+					Desactivado</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- NAV BARS -->
+		<!--  .navbar-expand-xl|lg|md|sm para barra de navegación vertical
+        .justsiy-content-center para centrarla
+        .fixed-top para que la barra de navegación quede fija arriba 
+        .fixed-bottom para que quede fija abajo
+        .sticky-top para que quede fija, luego de que se pase sobre ella
+        podemos elegir el color de fondo y de texto con colores contextuales -->
+		<div class="container mb-3">
+			<h2>Navbars</h2>
+			<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">
+						<!-- para poner un logo -->
+						<img src="img/favicon.ico" alt="logo" style="width:30px;">
+					</a>
+					<a class="navbar-brand" href="#">Navbar</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+						aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarScroll">
+						<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Inicio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">
+									Link
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Link 1</a></li>
+									<li><a class="dropdown-item" href="#">Link 2</a></li>
+									<li>
+										<hr class="dropdown-divider">
+									</li>
+									<li><a class="dropdown-item" href="#">Link 3</a></li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link disabled">Desactivado</a>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Buscar</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<hr>
+
+		<!-- FORMULARIOS -->
+		<div class="container">
+			<h2>Formulario </h2>
+			<div class="row">
+				<div class="col">
+					<!-- Sólo para viewport mayores a 576px de ancho. En pantallas pequeñas se apilan verticalmente</p> -->
+					<form class="form-inline" action="/codigo.php">
+						<div class="mb-3">
+							<label for="email" class="mr-sm-2">Email:</label>
+							<!-- .mr-sm-2 agrega margen derecho para que no quede todo tan pegado -->
+							<input disabled type="email" class="form-control form-control-sm mb-2 mr-sm-2" id="email"
+								placeholder="Ingrese email" name="email">
+						</div>
+						<div class="mb-3">
+							<label for="pwd" class="mr-sm-2">Contraseña:</label>
+							<!-- .mb-2 para darle estilo a los campos de ingreso de texto -->
+							<input type="password" class="form-control  mb-2 mr-sm-2" id="pwd" placeholder="Ingrese contraseña"
+								name="pswd">
+						</div>
+						<div class="form-check mb-2 mr-sm-2">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" name="remember"> Recordarme
+							</label>
+						</div>
+						<button type="submit" class="btn btn-primary mb-2">Enviar</button>
+					</form>
+				</div>
+				<div class="col"> </div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- BORDERS -->
+		<div class="container mb-3">
+			<h2>Bordes</h2>
+			<!-- .border border-top-o para los bordes de un elemento -->
+			<div class="row">
+				<div class="spanborde col-sm-1 border">1</div>
+				<div class="spanborde col-sm-1 border border-primary">2</div>
+				<div class="spanborde col-sm-1 border border-danger border-top-0">3</div>
+				<div class="spanborde col-sm-1 border border-warning border-right-0">4</div>
+				<div class="spanborde col-sm-1 border border-dark border-left-0">5</div>
+				<div class="spanborde col-sm-1 border border-success border-bottom-0">6</div>
+			</div>
+		</div>
+
+		<div class="container mb-3">
+			<div class="row">
+				<span class="spanborde rounded-sm">1</span>
+				<span class="spanborde rounded-top">2</span>
+				<span class="spanborde rounded-circle">3</span>
+				<span class="spanborde rounded-bottom">4</span>
+				<span class="spanborde rounded-sm">5</span>
+				<span class="spanborde rounded-top">6</span>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- FLOAT -->
+		<div class="container mb-3">
+			<h2>Float</h2>
+			<!-- .float-start .clearfix .float-none .float-end -->
+			<div class="clearfix">
+				<span class="float-start">Float izquierda</span>
+				<span class="float-end">Float derecha</span>
+			</div>
+			<div class="float-sm-end">Flota a la derecha en pantallas pequeñas o más</div><br>
+			<div class="float-md-end">Flota a la derecha en pantallas medianas o más</div><br>
+			<div class="float-lg-end">Flota a la derecha en pantallas grandes o más</div><br>
+			<div class="float-xl-end">Flota a la derecha en pantallas extra grandes o más</div><br>
+			<div class="float-none">Float none</div>
+		</div>
+
+		<!-- UTILITIES CENTRADO -->
+		<div class="container mb-3">
+			<h1>Centrado horizontal</h1>
+			<!-- .mx-auto para centrar un elemento -->
+			<div class="mx-auto bg-warning" style="width:150px">Centrado</div>
+		</div>
+
+		<!-- UTILITIES ANCHO -->
+		<div class="container mb-3">
+			<h1>Utilidades de Ancho</h1>
+			<!-- .w-* para determinar el ancho -->
+			<div class="w-25 bg-warning">Ancho 25%</div>
+			<div class="w-50 bg-warning">Ancho 50%</div>
+			<div class="w-75 bg-warning">Ancho 75%</div>
+			<div class="w-100 bg-warning">Ancho 100%</div>
+			<div class="mw-100 bg-warning">Ancho máximo 100%</div>
+		</div>
+
+		<!-- UTILITIES ALTO -->
+		<div class="container mb-3">
+			<h1>Utilidades de Alto</h1>
+			<!-- .h-* para determinar el alto -->
+			<div style="height:200px;background-color:#ddd">
+				<div class="h-25 d-inline-block p-2 bg-warning">Alto 25%</div>
+				<div class="h-50 d-inline-block p-2 bg-warning">Alto 50%</div>
+				<div class="h-75 d-inline-block p-2 bg-warning">Alto 75%</div>
+				<div class="h-100 d-inline-block p-2 bg-warning">Alto 100%</div>
+				<div class="mh-100 d-inline-block p-2 bg-warning" style="height:500px">Alto máximo 100%</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- ESPACIOS -->
+		<div class="container mb-3">
+			<h1>Utilidades de Espacio</h1>
+			<!-- {property}{sides}-{breakpoint}-{size} 
+        property= m (margen) o p (padding)
+        sides= t (top) b (bottom) l (left) r (right) x (left y right) y (top y bottom)
+        breakpoint= sm, md, lg, xl
+        size= 
+            auto - auto
+            0 - 0
+            1 - .25rem (4px si font-size si 16px)
+            2 - .5rem (8px si font-size si 16px)
+            3 - 1rem (16px si font-size si 16px)
+            4 - 1.5rem (24px si font-size si 16px)
+            5 - 3rem (48px si font-size si 16px)
+            
+        Se puede omitir side si se quiere que aplique a los cuatro lados  
+        Se puede omitir el breakpoint si se quiere que funcione en todas las pantallas
+       -->
+			<div class="pt-4 bg-warning">Marca un padding arriba (1.5rem = 24px)</div>
+			<div class="p-5 bg-success">Marca padding en todos lados (3rem = 48px)</div>
+			<div class="m-5 pb-5 bg-info">Marca margen en todos lados (3rem = 48px) y padding abajo (3rem = 48px)</div>
+		</div>
+
+		<hr>
+
+		<!-- SHADOW (SOMBRA) -->
+		<div class="container mb-3">
+			<h1>Sombras</h1>
+			<!-- .shadow- para agregar sombras a un elemento  -->
+			<div class="shadow-none p-4 mb-4 bg-light">Sin Sombra</div>
+			<div class="shadow-sm p-4 mb-4 bg-white">Sombra pequeña</div>
+			<div class="shadow p-4 mb-4 bg-white">Sombra normal</div>
+			<div class="shadow-lg p-4 mb-4 bg-white">Sombra grande</div>
+		</div>
+
+		<hr>
+
+		<!-- ALINEACIÓN VERTICAL -->
+		<div class="container mb-3">
+			<h2>Alineación Vertical</h2>
+			<!-- Sólo funciona en inline, inline-block, inline-table y celdas de tabla -->
+			<span class="align-baseline">base</span>
+			<span class="align-top">arriba</span>
+			<span class="align-middle">medio</span>
+			<span class="align-bottom">abajo</span>
+			<span class="align-text-top">texto arriba</span>
+			<span class="align-text-bottom">texto abajo</span>
+		</div>
+
+		<hr>
+
+		<!-- VISIBILIDAD -->
+		<div class="container mb-3">
+			<h2>Visibilidad</h2>
+			<!-- .visible .invisible No alteran el valor "display"
+ 			-->
+			<div class="visible bg-success">Esto es visible</div>
+			<div class="invisible bg-warning">Esto es invisible</div>
+		</div>
+
+		<hr>
+
+		<!-- TOOLTIPS -->
+		<!-- los tooltips se deben inicializar con un pequeño javascript al final de este documento -->
+		<div class="container mb-3">
+			<h2>Tooltips</h2>
+			<p class="muted">Texto de muestra para demostrar <a href="#" data-bs-toggle="tooltip"
+					data-bs-title="tooltip">links con tooltip</a>.
+			</p>
+		</div>
+
+		<hr>
+
+		<!-- POPOVERS -->
+		<!-- los popover se deben inicializar con un pequeño javascript al final de este documento -->
+		<div class="container mb-3">
+			<h2>Popovers</h2>
+			<button type="button" class="btn btn-danger" data-bs-toggle="popover" data-bs-title="Título del Popover"
+				data-bs-content="Contenido del Popover">Abrir Popover</button>
+		</div>
+
+		<hr>
+
+		<!-- MODAL	 -->
+		<div class="container mb-3">
+			<h2>Aviso Modal</h2>
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+				Abrir Modal
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Título del Modal</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							Texto del cuerpo del Modal
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- AVISOS TOAST -->
+		<!-- los toast se deben inicializar con un pequeño javascript al final de este documento -->
+		<div class="container mb-3">
+			<h2>Avisos Toast</h2>
+			<button type="button" class="btn btn-primary" id="liveToastBtn">Mostrar Toast</button>
+
+			<div class="toast-container position-fixed top-0 end-0 p-3">
+				<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="toast-header">
+						<img src="img/bootstrap-favicon-32x32.png" class="rounded me-2" alt="avatar">
+						<strong class="me-auto">Bootstrap</strong>
+						<small>hace 11 min</small>
+						<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+					</div>
+					<div class="toast-body">
+						Hello, world! Esto es un mensaje toast.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Debemos agregar Librarías JavaScript de Bootstrap  -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+			</script>
+		<script>
+			// script para el Toast
+			const toastTrigger = document.getElementById('liveToastBtn')
+			const toastLiveExample = document.getElementById('liveToast')
+			if (toastTrigger) {
+				toastTrigger.addEventListener('click', () => {
+					const toast = new bootstrap.Toast(toastLiveExample)
+					toast.show()
+				})
+			}
+
+			// script para los popovers
+			const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+			const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+			// script para los tooltips
+			const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+		</script>
 </body>
+
 </html>
