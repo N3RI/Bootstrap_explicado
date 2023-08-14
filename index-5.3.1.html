@@ -11,5 +11,41 @@
   mediante el uso de "responsive design". 
 -->
 
+<head>
+	<title>Bootstrap Explicado 5.3.1</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Este archivo contiene código explicado HTML5 con clases CSS de Bootstrap5.3.1">
+	<meta name="author" content="Neri Tisocco">
+	<link rel="icon" href="img/bootstrap-favicon-32x32.png" sizes="32x32" type="image/png">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Esto es necesario ponerlo para que el deseño sea "responsive design" y se adapte a diferentes tamaños de pantalla
+    width=device-width establece que el ancho de la página según el ancho de la pantalla del despositivo
+    initial-scale=1 selecciona el nivel de zoom inicial. -->
+
+	<!-- IMPORTANTE: Existen dos formas de usar bootstrap al hacer una página web. Para que Bootstrap funcione, 
+		es importante elegir y utilizar una de ellas. 
+		Se puede descargar un paquete de archivos .css desde getbootstrap.com y ponerlo en una carpeta junto al 
+		resto de archivos del sitio web y linkear esos archivos locales:
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	  La otra forma es linkear a un CDN (Content Delivery Network) externo, como se muestra a continuación: 
+  -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<!-- Ventajas de usar un CDN externo:
+    - Si ya se descargó al entrar otro sitio web que usa Bootstrap, tu página carga más rápido
+    - los CDN detectan la localización del usuario y utilizan el servidor más cercano
+    - popper se usan para darle funcionalidades de javascript a algunos componentes de bootstrap
+   -->
+	<link rel="stylesheet" href="./css/styles.css">
+	<!-- Además se puede usar estilos propios para definir atributos que no están especificados por Bootstrap. -->
+</head>
+
+<body>
+
+	<!-- Debemos agregar Librarías JavaScript de Bootstrap  -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+	</script>
+</body>
 </html>
